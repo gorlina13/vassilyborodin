@@ -1,0 +1,7 @@
+.flex-page {
+  display: flex;
+  flex-direction: column;
+
+  // height instead of min-height for IE 11, see flexbugs # 3
+  height: 100vh;
+}
