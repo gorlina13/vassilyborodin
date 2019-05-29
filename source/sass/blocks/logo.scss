@@ -1,0 +1,96 @@
+.logo {
+  display: block;
+  padding: 20px 6%;
+
+  font: 400 28px/30px "Russo One", "Arial", sans-serif;
+  text-decoration: none;
+
+  @include break-word();
+
+  &[href] {
+    cursor: pointer;
+  }
+
+  &[href]:hover {
+    @include hover-transition();
+  }
+
+  &--main-nav {
+    flex-shrink: 0;
+    align-self: flex-start;
+
+    color: $logo-in-nav-color;
+
+    background-color: $body-bg-color;
+  }
+
+  &--main-nav[href]:hover,
+  &--main-nav:focus {
+    color: hsla(250, 100%, 10%, 0.8);
+  }
+
+  &--main-nav[href]:active {
+    color: $logo-in-nav-color;
+
+    text-shadow: 0 0 1px $logo-in-nav-color;
+  }
+
+  &--footer {
+    display: none;
+  }
+}
+
+.logo__text {
+  display: block;
+  max-width: 160px;
+}
+
+@media (min-width: $tablet-width) {
+  .logo {
+    padding: 20px 4%;
+
+    font-size: 32px;
+    line-height: 36px;
+
+    &--main-nav {
+      align-self: center;
+    }
+
+    &--footer {
+      flex-shrink: 0;
+      flex-basis: auto;
+      order: -1;
+
+      display: block;
+      margin-right: auto;
+      padding-right: 2%;
+      padding-top: 30px;
+
+      color: #ffffff;
+
+      background-color: $footer-bg-color;
+    }
+
+    &--footer[href]:hover,
+    &--footer[href]:focus {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &--footer[href]:active {
+      color: rgba(255, 255, 255, 0.8);
+
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .logo {
+    padding-left: 3%;
+    padding-right: 3%;
+
+    &--footer {
+      padding-right: 1%;
+    }
+  }
+}

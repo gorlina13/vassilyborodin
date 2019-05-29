@@ -1,0 +1,20 @@
+.page-header {
+  flex-shrink: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .page-header {
+    position: relative;
+    z-index: 10;
+
+    box-shadow: 0 2px 10px 0 $menu-bg-color;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header {
+    color: #ffffff;
+
+    background-color: $menu-bg-color;
+  }
+}

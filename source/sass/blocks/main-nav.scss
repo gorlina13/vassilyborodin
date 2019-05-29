@@ -1,0 +1,117 @@
+.main-nav {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #000000;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  right: 6%;
+  top: 0;
+  z-index: 20;
+
+  width: 3.556em;
+  height: 3.056em;
+  margin-right: -1.111em;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.main-nav__icon-bar {
+  position: absolute;
+  top: 1.445em;
+  right: 1.111em;
+
+  width: 1.278em;
+  height: 0.222em;
+
+  background-color: $hamburger-color;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
+}
+
+.main-nav__icon-bar::before,
+.main-nav__icon-bar::after {
+  content: "";
+
+  display: block;
+  width: 100%;
+  height: 0.222em;
+
+  background-color: $hamburger-color;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
+}
+
+.main-nav__icon-bar::before {
+  transform: translate(0, -0.445em);
+}
+
+.main-nav__icon-bar::after {
+  transform: translate(0, 0.222em);
+}
+
+.main-nav--opened .main-nav__icon-bar {
+  background-color: #ffffff;
+  transform: rotate(180deg);
+}
+
+.main-nav--opened .main-nav__icon-bar::before,
+.main-nav--opened .main-nav__icon-bar::after {
+  width: 60%;
+
+  background-color: #ffffff;
+}
+
+.main-nav--opened .main-nav__icon-bar::before {
+  transform: translate(0.667em, -0.167em) rotate(45deg);
+}
+
+.main-nav--opened .main-nav__icon-bar::after {
+  transform: translate(0.667em, 0) rotate(-45deg);
+}
+
+@media (max-width: $mobile-width-only) {
+  .main-nav--opened .main-nav__list {
+    display: block;
+  }
+
+  .main-nav--nojs ul.main-nav__list {
+    display: block;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--closed .main-nav__list {
+    display: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+    flex-direction: row;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    max-width: $desktop-width;
+    margin: 0 auto;
+  }
+}
