@@ -1,0 +1,85 @@
+.page-title {
+  padding: 0 6%;
+
+  @include md-heading-size();
+
+  font-family: "Russo One", "Arial", sans-serif;
+  font-weight: 400;
+
+  @include break-word();
+
+  &--index {
+    margin-top: 0;
+
+    color: #ffffff;
+
+    background-color: $title-standard-color;
+  }
+
+  &--inner-page {
+    color: $title-standard-color;
+
+    background-color: $body-bg-color;
+  }
+}
+
+.page-title__name {
+  display: block;
+  padding-top: 0.667em;
+}
+
+.page-title__number {
+  display: block;
+  margin-bottom: 0.5em;
+
+  font-size: 1.333em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+
+  &--eighteen-plus {
+    width: 60%;
+    padding-right: 3%;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-title {
+    padding: 0 4%;
+
+    &--index {
+      @include lg-heading-size();
+      color: $title-standard-color;
+
+      background-color: $body-bg-color;
+    }
+
+    &--editions {
+      margin-top: 1.334em;
+      padding: 0 0.667em;
+    }
+  }
+
+  .page-title__name {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-title {
+    padding-right: 3%;
+    padding-left: 3%;
+
+    &--inner-page {
+      width: 55%;
+    }
+
+    &--editions {
+      padding-right: 0.667em;
+      padding-left: 0.667em;
+    }
+  }
+
+  .page-title__number--eighteen-plus {
+    width: 80%;
+  }
+}
