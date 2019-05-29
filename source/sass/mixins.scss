@@ -1,0 +1,22 @@
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin break-word() {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin hover-transition() {
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
