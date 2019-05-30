@@ -48,6 +48,7 @@
 
     &--index {
       @include lg-heading-size();
+
       color: $title-standard-color;
 
       background-color: $body-bg-color;

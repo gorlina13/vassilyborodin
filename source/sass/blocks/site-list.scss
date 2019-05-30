@@ -112,10 +112,11 @@
     flex-wrap: wrap;
 
     width: 70%;
-    border-left: 2px solid $menu-bg-color;
 
     color: #ffffff;
+
     background-color: $menu-bg-color;
+    border-left: 2px solid $menu-bg-color;
 
     &::after {
       display: none;

@@ -1,6 +1,7 @@
+$mobile-width-only: 767px;
 $tablet-width: 768px;
 $desktop-width: 1200px;
-$mobile-width-only: 767px;
+$smaller-desktop-width: 1060px;
 
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
@@ -11,3 +12,4 @@ $footer-bg-color: #333333;
 $hamburger-color: lighten($menu-bg-color, 10%);
 $logo-in-nav-color: hsl(274, 15%, 19%);
 $title-standard-color: hsl(60, 5%, 30%);
+$about-underline-color: hsl(218, 26%, 71%);

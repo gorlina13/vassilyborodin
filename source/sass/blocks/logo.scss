@@ -31,7 +31,6 @@
 
   &--main-nav[href]:active {
     color: $logo-in-nav-color;
-
     text-shadow: 0 0 1px $logo-in-nav-color;
   }
 
@@ -78,7 +77,6 @@
 
     &--footer[href]:active {
       color: rgba(255, 255, 255, 0.8);
-
       text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
     }
   }
