@@ -1,0 +1,523 @@
+.about {
+  padding-bottom: 1.5em;
+
+  font-family: "PT Sans", "Arial", sans-serif;
+  color: #ffffff;
+
+  @include break-word();
+
+  background-color: $title-standard-color;
+}
+
+.about__text {
+  margin: 0;
+  padding: 0 6%;
+
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.about__title {
+  @include sm-heading-size();
+
+  font-weight: 700;
+}
+
+.about__description {
+  @include paragraph-size();
+
+  line-height: 1.667em;
+}
+
+.about__link {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+
+  @include underline($about-underline-color);
+}
+
+.about__link[href] {
+  cursor: pointer;
+}
+
+.about__link[href]:hover,
+.about__link:focus {
+  color: #333333;
+
+  background: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.about__link[href]:hover {
+  @include hover-transition();
+}
+
+.about__link[href]:active {
+  color: #333333;
+
+  background-color: #ffffff;
+}
+
+.about__figure {
+  display: block;
+  margin: 1.5em 0;
+  padding: 0 6%;
+
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.about__image,
+.about__figure figcaption {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+.about__figure:nth-of-type(1) .about__image,
+.about__figure:nth-of-type(1) figcaption {
+  width: 333px;
+  max-width: 100%;
+}
+
+.about__figure:nth-of-type(2) .about__image,
+.about__figure:nth-of-type(2) figcaption {
+  width: 569px;
+  max-width: 100%;
+}
+
+.about__figure figcaption {
+  padding-top: 0.5em;
+
+  line-height: 1.333em;
+}
+
+@media (max-width: $mobile-width-only) {
+  .about:last-child {
+    position: relative;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      height: 6px;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+      opacity: 0.2;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .about {
+    color: #000000;
+
+    background-color: $body-bg-color;
+  }
+
+  // ms-grid!
+  .about__grid {
+    display: -ms-grid;
+    -ms-grid-columns: minmax(0, 1fr);
+    -ms-grid-rows: auto auto auto auto;
+
+    &::after {
+      content: "";
+
+      display: table;
+      clear: both;
+    }
+  }
+
+  .about__text {
+    position: relative;
+
+    margin: 0 1.5%;
+    margin-top: 1.5em;
+    padding: 1.5em;
+
+    color: #ffffff;
+
+    background-color: transparentize($title-standard-color, 0.15);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    &::before {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-of-type(1)::before,
+    &:nth-of-type(3)::before {
+      background-image: url("../img/foil-1-knight&angel@1x.jpg");
+      background-position: right bottom;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/foil-1-knight&angel@2x.jpg");
+      }
+    }
+
+    &:nth-of-type(2)::before {
+      background-image: url("../img/foil-3-dynosaurus@1x.jpg");
+      background-position: right center;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/foil-3-dynosaurus@2x.jpg");
+      }
+    }
+
+    &:nth-of-type(4)::before {
+      background-image: url("../img/foil-2-fly@1x.jpg");
+      background-position: left top;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/foil-2-fly@2x.jpg");
+      }
+    }
+
+    &::after {
+      background-color: transparentize($title-standard-color, 0.15);
+    }
+  }
+
+  // ms-grid!
+  .about__figure {
+    margin: 0 1.5%;
+    padding: 1.5em 1.5em 0;
+
+    -ms-grid-row-align: start;
+  }
+
+  .about__text,
+  .about__figure:nth-of-type(1) {
+    width: 47%;
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(1) {
+    float: right;
+
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: end;
+
+    & .about__title {
+      text-align: right;
+    }
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(2) {
+    float: left;
+    min-height: 22.222em;
+
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: start;
+
+    clear: both;
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(3) {
+    float: left;
+    min-height: 22.222em;
+
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: end;
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(4) {
+    float: right;
+
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: end;
+  }
+
+  .about__title {
+    position: relative;
+    z-index: 5;
+
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .about__description {
+    position: relative;
+    z-index: 5;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 1.15em;
+  }
+
+  // ms-grid!
+  .about__figure:nth-of-type(1) {
+    float: left;
+
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: start;
+  }
+
+  // ms-grid!
+  .about__figure:nth-of-type(2) {
+    float: left;
+    width: 97%;
+
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+
+    & figcaption {
+      position: relative;
+
+      margin: 0;
+      margin-left: -1.5em;
+      margin-top: -1.5em;
+      padding: 1.5em;
+
+      color: #ffffff;
+
+      background-color: transparentize($title-standard-color, 0.2);
+    }
+  }
+
+  .about__image {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  @supports (display: grid) {
+    // override
+    .about__grid::after {
+      clear: none;
+    }
+
+    // override
+    .about__text:nth-of-type(1),
+    .about__text:nth-of-type(2),
+    .about__text:nth-of-type(3),
+    .about__text:nth-of-type(4),
+    .about__figure:nth-of-type(1),
+    .about__figure:nth-of-type(2) {
+      width: auto;
+      min-height: auto;
+      margin-right: 0;
+      margin-left: 0;
+      clear: none;
+    }
+
+    // grid!
+    .about__text {
+      &:nth-of-type(1) {
+        grid-area: text1;
+      }
+
+      &:nth-of-type(2) {
+        grid-area: text2;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: text3;
+      }
+
+      &:nth-of-type(4) {
+        grid-area: text4;
+      }
+    }
+
+    // grid!
+    .about__figure {
+      align-self: start;
+
+      &:nth-of-type(1) {
+        grid-area: figure1;
+
+        padding-left: 27px;
+        padding-right: 0;
+      }
+
+      &:nth-of-type(1) figcaption {
+        padding-right: 1em;
+      }
+
+      &:nth-of-type(2) {
+        grid-area: figure2;
+      }
+    }
+
+    // grid!
+    .about__grid {
+      display: grid;
+      grid-column-gap: 1.5em;
+      grid-template-columns: [figure1-start] 360px [figure1-end text1-start] minmax(0, 1fr) [text1-end];
+      grid-template-areas:
+        "figure1 text1"
+        "text2 text3"
+        "figure2 figure2"
+        ". text4";
+    }
+  }
+}
+
+@media (min-width: $smaller-desktop-width) {
+  // ms-grid!
+  .about__grid {
+    -ms-grid-columns: minmax(0, 1fr);
+    -ms-grid-rows: auto auto auto auto auto auto;
+  }
+
+  .about__text,
+  .about__figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(1) {
+    float: left;
+    width: 66.66%;
+
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: start;
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(2) {
+    float: right;
+    width: 33.33%;
+    min-height: auto;
+
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: end;
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(3) {
+    float: right;
+    width: 33.33%;
+    min-height: auto;
+    margin-left: 33.33%;
+    margin-right: 33.33%;
+
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: center;
+
+    &::before {
+      background-image: url("../img/foil-3-dynosaurus@1x.jpg");
+      background-position: right top;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/foil-3-dynosaurus@2x.jpg");
+      }
+    }
+  }
+
+  // ms-grid!
+  .about__text:nth-of-type(4) {
+    float: right;
+    width: 33.33%;
+
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: start;
+  }
+
+  // ms-grid!
+  .about__figure:nth-of-type(1) {
+    float: right;
+    width: 33.33%;
+
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: end;
+
+    & .about__image,
+    & figcaption {
+      margin: 0;
+    }
+  }
+
+  // ms-grid!
+  .about__figure:nth-of-type(2) {
+    float: right;
+    width: 66.66%;
+
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: start;
+    -ms-grid-row-align: center;
+
+    & figcaption {
+      margin: 0 auto;
+      padding: 0.5em 0 0;
+
+      color: #000000;
+
+      background-color: transparent;
+    }
+  }
+
+  @supports (display: grid) {
+    // override
+    .about__text:nth-of-type(1),
+    .about__text:nth-of-type(2),
+    .about__text:nth-of-type(3),
+    .about__text:nth-of-type(4),
+    .about__figure:nth-of-type(1),
+    .about__figure:nth-of-type(2) {
+      width: auto;
+      min-height: auto;
+      margin-left: 0;
+      margin-right: 0;
+      clear: none;
+    }
+
+    .about__figure {
+      &:nth-of-type(1) {
+        padding-right: 27px;
+      }
+
+      // grid!
+      &:nth-of-type(2) {
+        align-self: center;
+      }
+    }
+
+    // grid!
+    .about__grid {
+      grid-template-columns: [text1-start] minmax(0, 1fr) minmax(0, 1fr) [text1-end figure1-start] 387px [figure1-end];
+      grid-gap: 0;
+      grid-template-areas:
+        "text1 text1 figure1"
+        "figure2 figure2 figure1"
+        "figure2 figure2 text2"
+        ". . text2"
+        ". text3 ."
+        "text4 . .";
+    }
+  }
+}
