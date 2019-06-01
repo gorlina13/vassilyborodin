@@ -34,29 +34,29 @@
   text-decoration: none;
   color: inherit;
 
-  @include underline($about-underline-color);
-}
+  @include underline($custom-underline-color);
 
-.about__link[href] {
-  cursor: pointer;
-}
+  &[href] {
+    cursor: pointer;
+  }
 
-.about__link[href]:hover,
-.about__link:focus {
-  color: #333333;
+  &[href]:hover,
+  &:focus {
+    color: #333333;
 
-  background: none;
-  background-color: rgba(255, 255, 255, 0.7);
-}
+    background: none;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 
-.about__link[href]:hover {
-  @include hover-transition();
-}
+  &[href]:hover {
+    @include hover-transition();
+  }
 
-.about__link[href]:active {
-  color: #333333;
+  &[href]:active {
+    color: #333333;
 
-  background-color: #ffffff;
+    background-color: #ffffff;
+  }
 }
 
 .about__figure {
@@ -75,16 +75,20 @@
   margin: 0 auto;
 }
 
-.about__figure:nth-of-type(1) .about__image,
-.about__figure:nth-of-type(1) figcaption {
-  width: 333px;
-  max-width: 100%;
+.about__figure:nth-of-type(1) {
+  & .about__image,
+  & figcaption {
+    width: 333px;
+    max-width: 100%;
+  }
 }
 
-.about__figure:nth-of-type(2) .about__image,
-.about__figure:nth-of-type(2) figcaption {
-  width: 569px;
-  max-width: 100%;
+.about__figure:nth-of-type(2) {
+  & .about__image,
+  & figcaption {
+    width: 569px;
+    max-width: 100%;
+  }
 }
 
 .about__figure figcaption {
