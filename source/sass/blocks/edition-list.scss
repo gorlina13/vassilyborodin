@@ -1,0 +1,133 @@
+.edition-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include reset-list();
+
+  padding: 1.111em 6%;
+
+  @include break-word();
+}
+
+.edition-list__item {
+  flex-shrink: 0;
+
+  max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 0.556em;
+  }
+}
+
+.edition-list__link {
+  position: relative;
+
+  display: block;
+  padding: 0 0 0 1.111em;
+
+  font: 700 1em/2.222em "PT Sans", "Arial", sans-serif;
+  text-align: right;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+
+  background-color: $footer-bg-color;
+  border: 1px solid transparent;
+
+  &[href] {
+    cursor: pointer;
+  }
+
+  &[href]:hover,
+  &:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 6px 0 10px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  &[href]:hover {
+    @include hover-transition();
+  }
+
+  &[href]:active {
+    border-color: #ffffff;
+    background-color: $footer-bg-color;
+    box-shadow: none;
+  }
+
+  &[href]:active::before,
+  &[href]:active::after {
+    content: "";
+
+    position: absolute;
+    top: -0.889em;
+
+    width: 0;
+    height: 0;
+
+    border-left: 0.278em solid transparent;
+    border-right: 0.278em solid transparent;
+    border-bottom: 0.833em solid rgba(255, 255, 255, 0.4);
+  }
+
+  &[href]:active::before {
+    left: 0.167em;
+  }
+
+  &[href]:active::after {
+    left: 0.722em;
+  }
+
+  .edition-list__item--current &:active::before,
+  .edition-list__item--current &:active::after {
+    display: none;
+  }
+
+  .edition-list__item--current & {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: overline;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .edition-list {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 30%;
+    padding-left: 2%;
+    padding-right: 4%;
+  }
+
+  .edition-list__link {
+    max-width: 170px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .edition-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    width: 66.66%;
+    padding-left: 1%;
+    padding-right: 3%;
+  }
+
+  .edition-list__item {
+    &:last-child {
+      margin-bottom: 0.556em;
+    }
+
+    &:not(:first-child) {
+      margin-left: 0.556em;
+    }
+  }
+
+  .edition-list__link {
+    max-width: 230px;
+  }
+}

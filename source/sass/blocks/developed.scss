@@ -1,0 +1,61 @@
+.developed {
+  display: block;
+  margin: 0;
+  padding: 1.25em 6% 0.625em;
+
+  font: 400 0.889em/1.375em "PT Sans", "Arial", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+
+  @include break-word();
+
+  background-color: $footer-bg-color;
+}
+
+.developed__link {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+
+  @include underline($custom-underline-color);
+
+  &[href] {
+    cursor: pointer;
+  }
+
+  &[href]:hover,
+  &:focus {
+    color: lighten($menu-bg-color, 40%);
+
+    background: none;
+  }
+
+  &[href]:hover {
+    @include hover-transition();
+  }
+
+  &[href]:active {
+    color: #ffffff;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .developed {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 40%;
+    margin-left: auto;
+    padding: 1.25em 4%;
+
+    text-align: right;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .developed {
+    margin-top: 0.625em;
+    padding: 1.25em 3%;
+  }
+}

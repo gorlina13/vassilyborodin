@@ -1,0 +1,29 @@
+.copyright {
+  margin: 0;
+  padding: 1.25em 6% 0.625em;
+
+  font: 700 0.889em/1.375em "PT Sans", "Arial", sans-serif;
+  color: #ffffff;
+
+  @include break-word();
+
+  background-color: $footer-bg-color;
+}
+
+@media (min-width: $tablet-width) {
+  .copyright {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 40%;
+    padding: 1.25em 4%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .copyright {
+    margin-top: 0.625em;
+    padding: 1.25em 3%;
+  }
+}

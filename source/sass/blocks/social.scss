@@ -1,0 +1,102 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin: 0 auto;
+  margin-bottom: 0.889em;
+  padding: 1.111em 6%;
+
+  list-style: none;
+}
+
+.social__item {
+  flex-shrink: 0;
+
+  margin-bottom: 0.222em;
+
+  &:not(:last-child) {
+    margin-right: 2%;
+  }
+}
+
+.social__link {
+  position: relative;
+
+  display: block;
+
+  width: 2em;
+  height: 2em;
+  padding: 0.167em;
+
+  background-color: #ffffff;
+  border-radius: 3%;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+}
+
+@include shadow-inset-bottom-left($social-icon-color, ".social__link:hover", ".social__link:focus");
+
+.social__link:active {
+  background-color: lighten($menu-bg-color, 10%);
+}
+
+@include shadow-around(rgba(255, 255, 255, 0.6), ".social__link:active");
+
+.social__icon {
+  display: block;
+  width: 1.667em;
+  height: 1.667em;
+
+  fill: $social-icon-color;
+
+  .social__link:hover &,
+  .social__link:focus & {
+    fill: lighten($menu-bg-color, 10%);
+  }
+
+  .social__link:active & {
+    fill: #ffffff;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .social {
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: flex-end;
+    order: -1;
+
+    width: 40%;
+    margin: 0;
+    padding: 1.667em 2%;
+    padding-bottom: 1.444em;
+  }
+
+  .social__item:not(:last-child) {
+    margin-right: 1%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .social {
+    order: 0;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.111em 1%;
+  }
+}

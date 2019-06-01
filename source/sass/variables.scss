@@ -7,9 +7,15 @@ $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
 $menu-bg-color: hsl(20, 100%, 40%);
-$body-bg-color: #f6f3ea;
-$footer-bg-color: #333333;
 $hamburger-color: lighten($menu-bg-color, 10%);
 $logo-in-nav-color: hsl(274, 15%, 19%);
+
+$body-bg-color: #f6f3ea;
 $title-standard-color: hsl(60, 5%, 30%);
-$about-underline-color: hsl(218, 26%, 71%);
+$custom-underline-color: hsl(218, 26%, 71%);
+$book-link-hover-color: hsl(157, 100%, 15%);
+
+$footer-bg-color: #333333;
+$social-icon-color: rgba(51, 51, 51, 0.8);
+
+$up-down-bg-color: hsla(157, 100%, 21%, 0.8);

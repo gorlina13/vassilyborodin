@@ -1,0 +1,21 @@
+.page-footer {
+  flex-shrink: 0;
+
+  padding: 1.111em 0;
+
+  color: #ffffff;
+
+  background-color: $footer-bg-color;
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer {
+    padding-top: 0.556em;
+  }
+
+  .page-footer__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
