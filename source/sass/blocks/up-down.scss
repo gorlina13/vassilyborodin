@@ -1,0 +1,49 @@
+@media (max-width: $mobile-width-only) {
+  .up-down {
+    &,
+    &--up,
+    &--down {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .up-down {
+    position: fixed;
+    bottom: 3.5em;
+    right: 4%;
+    z-index: 10;
+
+    display: none;
+    width: 3.333em;
+    height: 3.333em;
+    padding: 0;
+
+    background-color: $up-down-bg-color;
+    background-size: 70% 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 3%;
+    cursor: pointer;
+
+    &--up {
+      display: block;
+
+      background-image: url("../img/arrow-up.svg");
+    }
+
+    &--down {
+      display: block;
+
+      background-image: url("../img/arrow-down.svg");
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .up-down {
+    right: 3%;
+  }
+}
