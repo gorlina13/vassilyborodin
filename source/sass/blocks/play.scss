@@ -1,0 +1,178 @@
+.play {
+  color: #000000;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.play__description {
+  @include sm-heading-size();
+
+  padding: 0 6%;
+
+  font-weight: 400;
+  font-family: "Russo One", "Arial", sans-serif;
+  text-transform: lowercase;
+  color: $title-standard-color;
+}
+
+.play__list {
+  margin: 0;
+  padding: 0 6%;
+
+  list-style: none;
+}
+
+.play__scene:last-child {
+  margin-bottom: 4.5em;
+}
+
+.play__stage {
+  @include paragraph-size();
+
+  font-weight: 700;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-align: justify;
+  color: #333333;
+
+  & i {
+    font-style: normal;
+  }
+}
+
+.play__upper {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.play__speech {
+  margin: 0;
+
+  font: 400 1em/1.5em "PT Sans", "Arial", sans-serif;
+  color: #000000;
+
+  &--top {
+    margin-top: 1.5em;
+  }
+
+  &--bottom {
+    margin-bottom: 1.5em;
+  }
+
+  & .character:first-of-type {
+    padding-right: 0.5em;
+  }
+}
+
+.play__set .play__speech {
+  &:nth-child(2) {
+    padding-left: 10%;
+  }
+
+  &:nth-child(3) {
+    padding-left: 20%;
+  }
+}
+
+.play__indent {
+  display: block;
+
+  text-indent: 20%;
+
+  & + br {
+    display: none;
+  }
+
+  &--small {
+    text-indent: 10%;
+  }
+
+  &--big {
+    text-indent: 30%;
+  }
+
+  .play__speech--stairs &:nth-of-type(2) {
+    text-indent: 22%;
+  }
+
+  .play__speech--stairs &:nth-of-type(3) {
+    text-indent: 24%;
+  }
+
+  .play__speech--xl-stairs &:nth-of-type(1) {
+    text-indent: 40%;
+  }
+
+  .play__speech--xl-stairs &:nth-of-type(2) {
+    text-indent: 42%;
+  }
+
+  .play__speech--xl-stairs &:nth-of-type(3) {
+    text-indent: 44%;
+  }
+
+  .play__speech--xxl-stairs &:nth-of-type(1) {
+    text-indent: 50%;
+  }
+
+  .play__speech--xxl-stairs &:nth-of-type(2) {
+    text-indent: 52%;
+  }
+
+  .play__speech--xxl-stairs &:nth-of-type(3) {
+    text-indent: 54%;
+  }
+}
+
+.play__column {
+  display: block;
+  padding-left: 20%;
+
+  &--small-indent {
+    padding-left: 10%;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .play__description,
+  .play__list {
+    padding: 0 4%;
+  }
+
+  .play__speech .character {
+    &--min,
+    &--min + span,
+    &--half-min,
+    &--half-min + span {
+      display: inline-block;
+
+      vertical-align: top;
+    }
+
+    &--min {
+      min-width: 20%;
+    }
+
+    &--half-min {
+      min-width: 10%;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .play__description,
+  .play__list {
+    padding: 0 3%;
+  }
+
+  .play__stage {
+    width: 85%;
+  }
+
+  .play hr {
+    width: 85%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

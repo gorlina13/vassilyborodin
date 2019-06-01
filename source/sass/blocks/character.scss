@@ -1,0 +1,11 @@
+.character {
+  font: 400 1em/1.5em "PT Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  color: inherit;
+
+  @include break-word();
+}
+
+.character__lower {
+  text-transform: lowercase;
+}
