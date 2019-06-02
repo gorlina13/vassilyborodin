@@ -13,11 +13,11 @@
 
     color: #ffffff;
 
-    background-color: $title-standard-color;
+    background-color: $ordinary-heading-color;
   }
 
   &--inner-page {
-    color: $title-standard-color;
+    color: $ordinary-heading-color;
 
     background-color: $body-bg-color;
   }
@@ -49,7 +49,7 @@
     &--index {
       @include lg-heading-size();
 
-      color: $title-standard-color;
+      color: $ordinary-heading-color;
 
       background-color: $body-bg-color;
     }

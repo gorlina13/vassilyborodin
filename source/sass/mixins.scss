@@ -51,6 +51,14 @@
   line-height: 1.667em;
 }
 
+@mixin ordinary-heading() {
+  @include sm-heading-size();
+
+  font-weight: 400;
+  font-family: "Russo One", "Arial", sans-serif;
+  color: $ordinary-heading-color;
+}
+
 @mixin paragraph-size() {
   margin-top: 1.5em;
   margin-bottom: 1.5em;

@@ -7,14 +7,11 @@
 }
 
 .play__description {
-  @include sm-heading-size();
+  @include ordinary-heading();
 
   padding: 0 6%;
 
-  font-weight: 400;
-  font-family: "Russo One", "Arial", sans-serif;
   text-transform: lowercase;
-  color: $title-standard-color;
 }
 
 .play__list {

@@ -1,6 +1,20 @@
 .texts__list {
+  padding-left: 6%;
+  padding-right: 6%;
+
   @include reset-list();
+
+  color: #000000;
+
   @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.texts__title {
+  @include ordinary-heading();
+
+  text-transform: uppercase;
 }
 
 @media (min-width: $tablet-width) {

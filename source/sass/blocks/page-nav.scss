@@ -9,12 +9,9 @@
 }
 
 .page-nav__title {
-  @include sm-heading-size();
+  @include ordinary-heading();
 
-  font-weight: 400;
-  font-family: "Russo One", "Arial", sans-serif;
   text-transform: lowercase;
-  color: $title-standard-color;
 }
 
 .page-nav__list {
