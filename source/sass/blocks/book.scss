@@ -1,0 +1,81 @@
+.book {
+  padding: 0 6%;
+
+  font: 400 1em/1.5em "PT Sans", "Arial", sans-serif;
+  color: #000000;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.book__title {
+  @include ordinary-heading();
+}
+
+.book__link {
+  display: block;
+
+  font: inherit;
+  color: inherit;
+
+  &[href] {
+    cursor: pointer;
+  }
+
+  &[href]:hover,
+  &:focus {
+    color: $book-link-hover-color;
+    text-shadow: 0 0 1px $book-link-hover-color;
+  }
+
+  &[href]:hover {
+    @include hover-transition();
+  }
+
+  &[href]:active {
+    text-decoration: none;
+  }
+}
+
+.book__info {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: $tablet-width) {
+  .book {
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0 1.5em;
+  }
+
+  .book > * {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 100%;
+  }
+
+  .book__title ~ * {
+    margin-top: 1.5em;
+  }
+
+  .book > :last-child {
+    margin-top: auto;
+  }
+
+  .book > :nth-last-child(2) {
+    margin-bottom: 3em;
+  }
+
+  .book .book__title {
+    margin-top: 0;
+    margin-bottom: 1.666em;
+  }
+}
