@@ -1,8 +1,8 @@
 .texts__list {
+  @include reset-list();
+
   padding-left: 6%;
   padding-right: 6%;
-
-  @include reset-list();
 
   color: #000000;
 
