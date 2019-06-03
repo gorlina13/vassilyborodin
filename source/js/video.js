@@ -35,7 +35,7 @@
     var match = url.match(regexp);
 
     return match[1];
-  }﻿
+  }
 
   function generateURL(id) {
     var query = '?rel=0&showinfo=0&autoplay=1';
