@@ -1,0 +1,55 @@
+.event-list {
+  @include reset-list();
+
+  color: #000000;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.event-list__item {
+  margin: 0 0 3em;
+}
+
+@media (min-width: $tablet-width) {
+  .event-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: 0;
+  }
+
+  .event-list__item {
+    display: inline-block;
+
+    flex-shrink: 0;
+    flex-basis: auto;
+    display: flex; /* stylelint-disable-line */
+    flex-direction: column;
+
+    width: 50%;
+
+    font-size: 1rem;
+    vertical-align: top;
+  }
+
+  @supports (display: grid) {
+    .event-list {
+      display: grid;
+      grid-row-gap: 3em;
+      grid-template-columns: 1fr 1fr;
+
+      padding-bottom: 3em;
+
+      font-size: inherit;
+    }
+
+    .event-list__item {
+      width: auto;
+      margin: 0;
+
+      font-size: 1em;
+    }
+  }
+}

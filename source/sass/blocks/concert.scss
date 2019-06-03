@@ -1,0 +1,66 @@
+.concert {
+  padding: 0 6%;
+
+  font: 400 1em/1.5em "PT Sans", "Arial", sans-serif;
+  color: #000000;
+
+  @include break-word();
+
+  background-color: $body-bg-color;
+}
+
+.concert__title {
+  @include ordinary-heading();
+}
+
+.concert__time {
+  display: block;
+}
+
+.concert__icon {
+  display: block;
+  width: 1.778em;
+  height: 1.778em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  fill: $ordinary-heading-color;
+}
+
+@media (min-width: $tablet-width) {
+  .concert {
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0 1.5em;
+
+    & > * {
+      flex-shrink: 0;
+      flex-basis: auto;
+      width: 100%;
+    }
+  }
+
+  .concert__title {
+    margin-top: 0;
+
+    & ~ * {
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+
+    & + * {
+      margin-top: auto;
+    }
+  }
+
+  .concert__icon {
+    align-self: flex-start;
+
+    width: 1.778em;
+  }
+}

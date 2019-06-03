@@ -1,0 +1,105 @@
+.video {
+  position: relative;
+
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  background-color: #000000;
+}
+
+.video__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  &[href]:hover,
+  &:focus {
+    outline: thin dotted;
+  }
+
+  .video &[href]:hover,
+  .video &:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+}
+
+.video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+}
+
+.video--taller {
+  & .video__link {
+    overflow-y: hidden;
+  }
+
+  & img.video__media {
+    height: auto;
+    margin-top: -9.375%;
+  }
+}
+
+@supports (object-fit: cover) {
+  .video__media {
+    object-fit: cover;
+  }
+
+  .video--taller {
+    & .video__link {
+      overflow-y: visible;
+    }
+
+    & img.video__media {
+      height: 100%;
+      margin-top: 0;
+    }
+  }
+}
+
+.video__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+
+  display: none;
+  margin: auto;
+  padding: 0;
+  width: 68px;
+  height: 48px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.video__button-icon {
+  fill: #212121;
+  fill-opacity: 0.8;
+}
+
+.video:hover .video__button-icon,
+.video__button:focus .video__button-icon {
+  fill: #ff0000;
+  fill-opacity: 1;
+}
+
+.video--enabled {
+  cursor: pointer;
+
+  & .video__button {
+    display: block;
+  }
+}
