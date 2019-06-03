@@ -22,12 +22,10 @@
 
   .book-list__item {
     display: inline-block;
-  }
 
-  .book-list > .book-list__item {
     flex-shrink: 0;
     flex-basis: auto;
-    display: flex;
+    display: flex; /* stylelint-disable-line */
     flex-direction: column;
 
     width: 50%;
@@ -41,12 +39,13 @@
       display: grid;
       grid-row-gap: 1.5em;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
       padding-bottom: 1.5em;
 
       font-size: inherit;
     }
 
-    .book-list > .book-list__item {
+    .book-list__item {
       width: auto;
       margin: 0;
 
@@ -56,12 +55,12 @@
 }
 
 @media (min-width: $smaller-desktop-width) {
-  .book-list > .book-list__item {
+  .book-list__item {
     width: 33.333%;
   }
 
   @supports (display: grid) {
-    .book-list > .book-list__item {
+    .book-list__item {
       width: auto;
     }
   }
