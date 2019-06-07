@@ -23,7 +23,7 @@
   max-height: 3em;
   padding-top: 0.875em;
 
-  font: 400 2em/1.5em "Russo One", "Arial", sans-serif;
+  font: 400 2em/1.5em "Russo One", "Verdana", sans-serif;
   text-align: right;
   text-transform: none;
   color: $ordinary-heading-color;
@@ -39,7 +39,7 @@
   @include paragraph-size();
 
   font-weight: 400;
-  font-family: "PT Sans", "Arial", sans-serif;
+  font-family: "PT Sans", "Verdana", sans-serif;
   text-transform: uppercase;
   color: #000000;
 }

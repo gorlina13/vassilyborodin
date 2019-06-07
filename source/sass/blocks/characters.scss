@@ -8,7 +8,7 @@
   @include paragraph-size();
 
   font-weight: 700;
-  font-family: "PT Sans", "Arial", sans-serif;
+  font-family: "PT Sans", "Verdana", sans-serif;
   color: #333333;
 
   background-color: $body-bg-color;
@@ -21,7 +21,7 @@
 .characters__item {
   margin: 0;
 
-  font: 400 1em/1.5em "PT Sans", "Arial", sans-serif;
+  font: 400 1em/1.5em "PT Sans", "Verdana", sans-serif;
   text-transform: uppercase;
   color: inherit;
 

@@ -29,7 +29,7 @@
   @include paragraph-size();
 
   font-weight: 700;
-  font-family: "PT Sans", "Arial", sans-serif;
+  font-family: "PT Sans", "Verdana", sans-serif;
   text-align: justify;
   color: #333333;
 
@@ -46,7 +46,7 @@
 .play__speech {
   margin: 0;
 
-  font: 400 1em/1.5em "PT Sans", "Arial", sans-serif;
+  font: 400 1em/1.5em "PT Sans", "Verdana", sans-serif;
   color: #000000;
 
   &--top {
