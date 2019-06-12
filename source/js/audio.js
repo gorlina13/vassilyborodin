@@ -1,91 +1,57 @@
 'use strict';
 
 (function () {
-
   function findAudios() {
     var archiveAudios = document.querySelectorAll('.audio--archive');
     var bandcampAudios = document.querySelectorAll('.audio--bandcamp');
-    var archive = Source.createFromArchive();
-    var bandcamp = Source.createFromBandcamp();
+    var archivePlayer = new ArchivePlayer();
+    var bandcampPlayer = new BandcampPlayer();
 
     for (var i = 0; i < archiveAudios.length; i++) {
-      setupAudio(archiveAudios[i], archive);
+      archivePlayer.setup(archiveAudios[i]);
     }
 
     for (var i = 0; i < bandcampAudios.length; i++) {
-      setupAudio(bandcampAudios[i], bandcamp);
+      bandcampPlayer.setup(bandcampAudios[i]);
     }
   }
 
-  function Source() {
+  function Player() {}
+
+  Player.prototype.createIframe = function (id) {
     var self = this;
 
     function generateURL(id, start, end) {
       return self[start] + id  + self[end];
     }
 
-    this.createIframe = function (id) {
-      var iframe = document.createElement('iframe');
+    var iframe = document.createElement('iframe');
 
-      iframe.src = generateURL(id, 'URL_START', 'URL_END');
+    iframe.src = generateURL(id, 'URL_START', 'URL_END');
 
-      for (var key in this.additionalAttrs) {
-        iframe.setAttribute(key, this.additionalAttrs[key]);
-      }
-
-      iframe.classList.add('audio__media');
-
-      return iframe;
+    for (var key in this._additionalAttrs) {
+      iframe.setAttribute(key, this._additionalAttrs[key]);
     }
+
+    iframe.classList.add('audio__media');
+
+    return iframe;
   }
 
-  Source.createFromArchive = function () {
-    var source = new Source();
-    source.URL_START = 'https://archive.org/embed/';
-    source.URL_END = '&playlist=1';
-    source.additionalAttrs = {
-      'allowfullscreen': ''
-    };
+  Player.prototype.getId = function (link) {
+    var url = link.href;
+    return url.split('/').pop();
+  };
 
-    source.getId = function (link) {
-      return parseLinkURL(link);
-    };
-
-    return source;
-  }
-
-  Source.createFromBandcamp = function () {
-    var source = new Source();
-    var ALBUMS = {
-      '5': 201651664,
-      '-': 1118350219,
-      '--2': 570357022,
-      '--3': 1218095868,
-      '2018': 3882505198
-    };
-    source.URL_START = 'https://bandcamp.com/EmbeddedPlayer/album=';
-    source.URL_END = '/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/';
-    source.additionalAttrs = {
-      'seamless': ''
-    };
-
-    source.getId = function (link) {
-      var key = parseLinkURL(link);
-      return ALBUMS[key];
-    };
-
-    return source;
-  }
-
-  function setupAudio(audio, source) {
+  Player.prototype.setup = function (audio) {
     var link = audio.querySelector('.audio__link');
     var media = audio.querySelector('.audio__media');
     var button = audio.querySelector('.audio__button');
-    var id = source.getId(link);
-
+    var id = this.getId(link);
+    var self = this;
 
     function onAudioChildrenClick() {
-      var iframe = source.createIframe(id);
+      var iframe = self.createIframe(id);
 
       button.parentElement.removeChild(button);
       link.parentElement.removeChild(link);
@@ -98,11 +64,40 @@
     audio.classList.add('audio--enabled');
   }
 
-  function parseLinkURL(link) {
-    var url = link.href;
-
-    return url.split('/').pop();
+  function ArchivePlayer () {
+    this.URL_START = 'https://archive.org/embed/';
+    this.URL_END = '&playlist=1';
+    this._additionalAttrs = {
+      'allowfullscreen': ''
+    };
   }
+
+  ArchivePlayer.prototype = Object.create(Player.prototype);
+  ArchivePlayer.prototype.constructor = ArchivePlayer;
+
+  function BandcampPlayer () {
+    this.ALBUMS = {
+      '5': 201651664,
+      '-': 1118350219,
+      '--2': 570357022,
+      '--3': 1218095868,
+      '2018': 3882505198
+    };
+
+    this.URL_START = 'https://bandcamp.com/EmbeddedPlayer/album=';
+    this.URL_END = '/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/';
+    this._additionalAttrs = {
+      'seamless': ''
+    };
+  }
+
+  BandcampPlayer.prototype = Object.create(Player.prototype);
+  BandcampPlayer.prototype.constructor = BandcampPlayer;
+
+  BandcampPlayer.prototype.getId = function (link) {
+    var key = Player.prototype.getId(link);
+    return this.ALBUMS[key];
+  };
 
   findAudios();
 })();
