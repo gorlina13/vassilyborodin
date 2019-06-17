@@ -1,8 +1,9 @@
 .logo {
   display: block;
-  padding: 20px 6%;
+  max-width: calc(12% + 160px);
+  padding: 0.714em 6%;
 
-  font: 400 28px/30px "Russo One", "Verdana", sans-serif;
+  font: 400 1.556em/1.071em "Russo One", "Verdana", sans-serif;
   text-decoration: none;
 
   @include break-word();
@@ -39,20 +40,21 @@
   }
 }
 
-.logo__text {
-  display: block;
-  max-width: 160px;
-}
-
 @media (min-width: $tablet-width) {
   .logo {
-    padding: 20px 4%;
+    max-width: calc(8% + 160px);
+    padding: 0.625em 4%;
 
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 1.778em;
+    line-height: 1.125em;
 
     &--main-nav {
       align-self: center;
+
+      display: inline-block;
+
+      vertical-align: middle;
+      text-align: left;
     }
 
     &--footer {
@@ -63,7 +65,7 @@
       display: block;
       margin-right: auto;
       padding-right: 2%;
-      padding-top: 30px;
+      padding-top: 0.938em;
 
       color: #ffffff;
 
@@ -84,6 +86,7 @@
 
 @media (min-width: $desktop-width) {
   .logo {
+    max-width: calc(6% + 160px);
     padding-left: 3%;
     padding-right: 3%;
 

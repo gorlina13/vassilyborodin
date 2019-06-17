@@ -102,6 +102,8 @@
 @media (min-width: $tablet-width) {
   .main-nav {
     flex-direction: row;
+
+    text-align: right;
   }
 
   .main-nav__toggle {
