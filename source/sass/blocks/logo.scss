@@ -18,6 +18,7 @@
 
   &--main-nav {
     flex-shrink: 0;
+    flex-basis: auto;
     align-self: flex-start;
 
     color: $logo-in-nav-color;
@@ -63,8 +64,8 @@
       order: -1;
 
       display: block;
+      float: left;
       margin-right: auto;
-      padding-right: 2%;
       padding-top: 0.938em;
 
       color: #ffffff;
@@ -89,9 +90,5 @@
     max-width: calc(6% + 160px);
     padding-left: 3%;
     padding-right: 3%;
-
-    &--footer {
-      padding-right: 1%;
-    }
   }
 }

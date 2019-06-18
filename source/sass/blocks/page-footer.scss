@@ -17,5 +17,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+
+    &::after {
+      content: "";
+
+      display: table;
+
+      clear: both;
+    }
   }
 }
