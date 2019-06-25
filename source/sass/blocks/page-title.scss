@@ -7,6 +7,7 @@
   font-weight: 400;
 
   @include break-word();
+  hyphens: manual;
 
   &--index {
     margin-top: 0;
