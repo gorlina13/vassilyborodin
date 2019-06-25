@@ -24,6 +24,28 @@
   margin-bottom: 1.5em;
 }
 
+.album__link {
+  font: inherit;
+  color: inherit;
+
+  &[href] {
+    cursor: pointer;
+  }
+
+  &[href]:hover,
+  &:focus {
+    text-shadow: 0 0 1px $ordinary-heading-color;
+  }
+
+  &[href]:hover {
+    @include hover-transition();
+  }
+
+  &[href]:active {
+    text-decoration: none;
+  }
+}
+
 .album__icon {
   display: block;
   width: 1.778em;
