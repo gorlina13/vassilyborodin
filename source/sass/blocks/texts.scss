@@ -26,6 +26,14 @@
 @media (min-width: $desktop-width) {
   .texts {
     display: flex;
+
+    &::after {
+      content: "";
+
+      display: table;
+
+      clear: both;
+    }
   }
 
   .texts__list {
@@ -33,6 +41,7 @@
     flex-basis: auto;
 
     width: 60%;
+    float: left;
     padding: 0 3%;
     padding-right: 1.5%;
   }
