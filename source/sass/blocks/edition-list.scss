@@ -84,7 +84,6 @@
   }
 
   .edition-list__item--current & {
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: overline;
   }
 
@@ -96,13 +95,13 @@
     box-shadow: none;
   }
 
-  &--external[href]:hover .edition-list__name,
-  &--external:focus .edition-list__name {
-    text-decoration: underline;
+  &--external[href]:hover,
+  &--external:focus {
+    color: rgba(255, 255, 255, 0.7);
   }
 
-  &--external[href]:active .edition-list__name {
-    text-decoration: none;
+  &--external[href]:active {
+    color: #ffffff;
   }
 
   &--external[href]:hover::before,
