@@ -4,6 +4,8 @@
   padding-left: 6%;
   padding-right: 6%;
 
+  font-weight: 400;
+  font-family: "PT Sans", "Verdana", sans-serif;
   color: #000000;
 
   @include break-word();
@@ -15,6 +17,42 @@
   @include ordinary-heading();
 
   text-transform: uppercase;
+}
+
+.texts__info {
+  @include paragraph-size();
+
+  color: inherit;
+}
+
+.texts__link {
+  display: block;
+
+  @include paragraph-size();
+
+  color: inherit;
+
+  &[href] {
+    cursor: pointer;
+  }
+
+  &[href]:hover,
+  &:focus {
+    text-shadow: 0 0 1px #333333;
+  }
+
+  &[href]:hover {
+    @include hover-transition();
+  }
+
+  &[href]:active {
+    text-decoration: none;
+  }
+
+  .texts__info & {
+    display: inline;
+    margin: 0;
+  }
 }
 
 @media (min-width: $tablet-width) {
