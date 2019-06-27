@@ -30,7 +30,7 @@
 
 @mixin underline($color) {
   background: linear-gradient($color, $color) no-repeat;
-  background-size: 100% 1px;
+  background-size: 100% 2px;
   background-position: 0 1.2em;
 }
 
