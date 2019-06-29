@@ -1,78 +1,84 @@
 'use strict';
 
 (function () {
-  var upDownElem = document.querySelector('.up-down');
-  upDownElem.currentState = '';
-  var pageYLabel = 0;
+  function findButton() {
+    var button = document.querySelector('.up-down');
 
-  function pointerUp() {
-    upDownElem.classList.remove('up-down--down');
-    upDownElem.classList.add('up-down--up');
-    upDownElem.setAttribute('aria-label', 'Вернуться наверх');
-    upDownElem.currentState = 'up';
-  }
-
-  function pointerDown() {
-    upDownElem.classList.remove('up-down--up');
-    upDownElem.classList.add('up-down--down');
-    upDownElem.setAttribute('aria-label', 'Вернуться вниз');
-    upDownElem.currentState = 'down';
-  }
-
-  function hideUpDownElem() {
-    upDownElem.classList.remove('up-down--up');
-    upDownElem.classList.remove('up-down--down');
-    upDownElem.removeAttribute('aria-label');
-    upDownElem.currentState = '';
-  }
-
-  function onUpDownClick() {
-    var pageY = window.pageYOffset || document.documentElement.scrollTop;
-
-    switch (this.currentState) {
-      case 'up':
-        pageYLabel = pageY;
-        window.scrollTo(0, 0);
-        pointerDown();
-        break;
-
-      case 'down':
-        window.scrollTo(0, pageYLabel);
-        pointerUp();
+    if (button !== null) {
+      var upDownButton = new UpDownButton(button);
+      upDownButton.run();
     }
   }
 
-  function onWindowScroll() {
-    var pageY = window.pageYOffset || document.documentElement.scrollTop;
-    var innerHeight = document.documentElement.clientHeight;
+  function UpDownButton(button) {
+    this.button = button;
+    this.currentState = '';
+    this.pageYLabel = 0;
+  }
 
-    switch (upDownElem.currentState) {
-      case '':
-        if (pageY > innerHeight) {
-          pointerUp();
-        }
-        break;
+  UpDownButton.prototype.pointerUp = function () {
+    this.button.classList.remove('up-down--down');
+    this.button.classList.add('up-down--up');
+    this.currentState = 'up';
+  };
 
-      case 'up':
-        if (pageY < innerHeight) {
-          hideUpDownElem();
-        }
-        break;
+  UpDownButton.prototype.pointerDown = function () {
+    this.button.classList.remove('up-down--up');
+    this.button.classList.add('up-down--down');
+    this.currentState = 'down';
+  };
 
-      case 'down':
-        if (pageY > innerHeight) {
-          pointerUp();
-        }
-        break;
+  UpDownButton.prototype.hideButton = function () {
+    this.button.classList.remove('up-down--up');
+    this.button.classList.remove('up-down--down');
+    this.currentState = '';
+  };
+
+  UpDownButton.prototype.run = function () {
+    function onButtonClick() {
+      var pageY = window.pageYOffset || document.documentElement.scrollTop;
+
+      switch (this.currentState) {
+        case 'up':
+          this.pageYLabel = pageY;
+          window.scrollTo(0, 0);
+          this.pointerDown();
+          break;
+
+        case 'down':
+          window.scrollTo(0, this.pageYLabel);
+          this.pointerUp();
+      }
     }
-  }
 
-  function handleUpDownElem() {
-    window.addEventListener('scroll', onWindowScroll);
-    upDownElem.addEventListener('click', onUpDownClick);
-  }
+    function onWindowScroll() {
+      var pageY = window.pageYOffset || document.documentElement.scrollTop;
+      var innerHeight = document.documentElement.clientHeight;
 
-  if (upDownElem !== null) {
-    handleUpDownElem();
-  }
+      switch (this.currentState) {
+        case '':
+          if (pageY > innerHeight) {
+            this.pointerUp();
+          }
+          break;
+
+        case 'up':
+          if (pageY < innerHeight) {
+            this.hideButton();
+          }
+          break;
+
+        case 'down':
+          if (pageY > innerHeight) {
+            this.pointerUp();
+          }
+          break;
+      }
+    }
+
+    window.addEventListener('scroll', onWindowScroll.bind(this));
+    this.button.addEventListener('click', onButtonClick.bind(this));
+  };
+
+  findButton();
 })();
