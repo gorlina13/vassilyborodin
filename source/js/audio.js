@@ -16,16 +16,19 @@
     }
   }
 
-  function Player() {}
+  function Player() {
+    this.URL_START = '';
+    this.URL_END = '';
+    this._additionalAttrs = {};
+  }
 
   Player.prototype.createIframe = function (id) {
     var self = this;
+    var iframe = document.createElement('iframe');
 
     function generateURL(id, start, end) {
       return self[start] + id  + self[end];
     }
-
-    var iframe = document.createElement('iframe');
 
     iframe.src = generateURL(id, 'URL_START', 'URL_END');
 
@@ -36,7 +39,7 @@
     iframe.classList.add('audio__media');
 
     return iframe;
-  }
+  };
 
   Player.prototype.getId = function (link) {
     var url = link.href;
@@ -45,24 +48,28 @@
 
   Player.prototype.setup = function (audio) {
     var link = audio.querySelector('.audio__link');
-    var media = audio.querySelector('.audio__media');
-    var button = audio.querySelector('.audio__button');
     var id = this.getId(link);
-    var self = this;
 
     function onAudioChildrenClick() {
-      var iframe = self.createIframe(id);
+      var iframe = this.createIframe(id);
 
       button.parentElement.removeChild(button);
       link.parentElement.removeChild(link);
       audio.appendChild(iframe);
     }
 
-    link.addEventListener('click', onAudioChildrenClick);
-    button.addEventListener('click', onAudioChildrenClick);
-    link.removeAttribute('href');
-    audio.classList.add('audio--enabled');
-  }
+    if (id) {
+      var button = audio.querySelector('.audio__button');
+
+      /* В верстке высота audio больше высоты link
+      (зарезервировано место под плейлист, приходящий с Bandcamp).
+      Поэтому обработчик клика поставлен не на audio. */
+      link.addEventListener('click', onAudioChildrenClick.bind(this));
+      button.addEventListener('click', onAudioChildrenClick.bind(this));
+      link.removeAttribute('href');
+      audio.classList.add('audio--enabled');
+    }
+  };
 
   function ArchivePlayer () {
     this.URL_START = 'https://archive.org/embed/';
