@@ -17,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    font-size: 0;
+    font-size: 1px;
   }
 
   .event-list__item {
@@ -28,11 +28,16 @@
     display: flex; /* stylelint-disable-line */
     flex-direction: column;
 
-    width: 50%;
+    width: 49%;
 
     font-size: 1rem;
     vertical-align: top;
+
+    &:nth-child(odd) {
+      margin-right: auto;
+    }
   }
+
 
   @supports (display: grid) {
     .event-list {
@@ -50,6 +55,10 @@
       margin: 0;
 
       font-size: 1em;
+
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
     }
   }
 }

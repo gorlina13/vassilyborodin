@@ -17,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    font-size: 0;
+    font-size: 1px;
   }
 
   .book-list__item {
@@ -28,7 +28,7 @@
     display: flex; /* stylelint-disable-line */
     flex-direction: column;
 
-    width: 50%;
+    width: 49%;
 
     font-size: 1rem;
     vertical-align: top;
@@ -56,7 +56,7 @@
 
 @media (min-width: $smaller-desktop-width) {
   .book-list__item {
-    width: 33.333%;
+    width: 33%;
   }
 
   @supports (display: grid) {
