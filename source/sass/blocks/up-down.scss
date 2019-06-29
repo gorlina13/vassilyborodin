@@ -39,6 +39,18 @@
 
       background-image: url("../img/arrow-down.svg");
     }
+
+    & .visually-hidden {
+      display: none;
+    }
+
+    &--up .visually-hidden:first-of-type {
+      display: block;
+    }
+
+    &--down .visually-hidden:nth-of-type(2) {
+      display: block;
+    }
   }
 }
 
