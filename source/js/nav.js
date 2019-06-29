@@ -1,37 +1,47 @@
 'use strict';
 
 (function () {
-  var navMain = document.querySelector('.main-nav');
-  var navToggle = document.querySelector('.main-nav__toggle');
+  function findElements() {
+    var nav = document.querySelector('.main-nav');
+    var navToggle = document.querySelector('.main-nav__toggle');
 
-  function openNav() {
-    navMain.classList.remove('main-nav--closed');
-    navMain.classList.add('main-nav--opened');
-    navToggle.setAttribute('aria-expanded', true);
-  }
-
-  function closeNav() {
-    navMain.classList.remove('main-nav--opened');
-    navMain.classList.add('main-nav--closed');
-    navToggle.setAttribute('aria-expanded', false);
-  }
-
-  function onNavToggleClick() {
-    if (navMain.classList.contains('main-nav--closed')) {
-      openNav();
-    } else {
-      closeNav();
+    if (nav !== null && navToggle !== null) {
+      var mainNav = new MainNav(nav, navToggle);
+      mainNav.run();
     }
   }
 
-  function handleNav() {
-    navMain.classList.remove('main-nav--nojs');
-    closeNav();
-
-    navToggle.addEventListener('click', onNavToggleClick);
+  function MainNav(nav, navToggle) {
+    this.nav = nav;
+    this.navToggle = navToggle;
   }
 
-  if (navMain !== null && navToggle !== null) {
-    handleNav();
-  }
+  MainNav.prototype.open = function () {
+    this.nav.classList.remove('main-nav--closed');
+    this.nav.classList.add('main-nav--opened');
+    this.navToggle.setAttribute('aria-expanded', true);
+  };
+
+  MainNav.prototype.close = function () {
+    this.nav.classList.remove('main-nav--opened');
+    this.nav.classList.add('main-nav--closed');
+    this.navToggle.setAttribute('aria-expanded', false);
+  };
+
+  MainNav.prototype.run = function () {
+    function onNavToggleClick() {
+      if (this.nav.classList.contains('main-nav--closed')) {
+        this.open();
+      } else {
+        this.close();
+      }
+    }
+
+    this.nav.classList.remove('main-nav--nojs');
+    this.close();
+
+    this.navToggle.addEventListener('click', onNavToggleClick.bind(this));
+  };
+
+  findElements();
 })();
