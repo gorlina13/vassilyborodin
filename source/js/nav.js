@@ -29,18 +29,19 @@
   };
 
   MainNav.prototype.run = function () {
+    var self = this;
+
     function onNavToggleClick() {
-      if (this.nav.classList.contains('main-nav--closed')) {
-        this.open();
+      if (self.nav.classList.contains('main-nav--closed')) {
+        self.open();
       } else {
-        this.close();
+        self.close();
       }
     }
 
     this.nav.classList.remove('main-nav--nojs');
     this.close();
-
-    this.navToggle.addEventListener('click', onNavToggleClick.bind(this));
+    this.navToggle.addEventListener('click', onNavToggleClick);
   };
 
   findElements();

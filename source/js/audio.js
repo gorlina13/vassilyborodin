@@ -11,8 +11,8 @@
       archivePlayer.setup(archiveAudios[i]);
     }
 
-    for (var i = 0; i < bandcampAudios.length; i++) {
-      bandcampPlayer.setup(bandcampAudios[i]);
+    for (var j = 0; j < bandcampAudios.length; j++) {
+      bandcampPlayer.setup(bandcampAudios[j]);
     }
   }
 
@@ -26,13 +26,16 @@
     var self = this;
     var iframe = document.createElement('iframe');
 
-    function generateURL(id, start, end) {
-      return self[start] + id  + self[end];
+    function generateURL(start, end) {
+      return self[start] + id + self[end];
     }
 
-    iframe.src = generateURL(id, 'URL_START', 'URL_END');
+    iframe.src = generateURL('URL_START', 'URL_END');
 
     for (var key in this._additionalAttrs) {
+      if (!this._additionalAttrs.hasOwnProperty(key)) {
+        continue;
+      }
       iframe.setAttribute(key, this._additionalAttrs[key]);
     }
 
@@ -48,10 +51,11 @@
 
   Player.prototype.setup = function (audio) {
     var link = audio.querySelector('.audio__link');
+    var self = this;
     var id = this.getId(link);
 
     function onAudioChildrenClick() {
-      var iframe = this.createIframe(id);
+      var iframe = self.createIframe(id);
 
       button.parentElement.removeChild(button);
       link.parentElement.removeChild(link);
@@ -64,14 +68,14 @@
       /* В верстке высота audio больше высоты link
       (зарезервировано место под плейлист, приходящий с Bandcamp).
       Поэтому обработчик клика поставлен не на audio. */
-      link.addEventListener('click', onAudioChildrenClick.bind(this));
-      button.addEventListener('click', onAudioChildrenClick.bind(this));
+      link.addEventListener('click', onAudioChildrenClick);
+      button.addEventListener('click', onAudioChildrenClick);
       link.removeAttribute('href');
       audio.classList.add('audio--enabled');
     }
   };
 
-  function ArchivePlayer () {
+  function ArchivePlayer() {
     this.URL_START = 'https://archive.org/embed/';
     this.URL_END = '&playlist=1';
     this._additionalAttrs = {
@@ -82,7 +86,7 @@
   ArchivePlayer.prototype = Object.create(Player.prototype);
   ArchivePlayer.prototype.constructor = ArchivePlayer;
 
-  function BandcampPlayer () {
+  function BandcampPlayer() {
     this.ALBUMS = {
       '5': 201651664,
       '-': 1118350219,

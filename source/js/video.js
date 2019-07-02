@@ -15,14 +15,14 @@
   YouTubePlayer.prototype.createIframe = function (id) {
     var iframe = document.createElement('iframe');
 
-    function generateURL(id) {
+    function generateURL() {
       var QUERY = '?rel=0&showinfo=0&autoplay=1';
       return 'https://www.youtube.com/embed/' + id + QUERY;
     }
 
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay');
-    iframe.setAttribute('src', generateURL(id));
+    iframe.setAttribute('src', generateURL());
     iframe.classList.add('video__media');
 
     return iframe;
@@ -39,19 +39,19 @@
   YouTubePlayer.prototype.setup = function (video) {
     var link = video.querySelector('.video__link');
     var button = video.querySelector('.video__button');
+    var self = this;
     var id = this.parseLinkURL(link);
-    var handler = onVideoClick.bind(this);
 
     function onVideoClick() {
-      var iframe = this.createIframe(id);
+      var iframe = self.createIframe(id);
 
       link.parentElement.removeChild(link);
       button.parentElement.removeChild(button);
       video.appendChild(iframe);
-      video.removeEventListener('click', handler);
+      video.removeEventListener('click', onVideoClick);
     }
 
-    video.addEventListener('click', handler);
+    video.addEventListener('click', onVideoClick);
     link.removeAttribute('href');
     video.classList.add('video--enabled');
   };

@@ -35,19 +35,21 @@
   };
 
   UpDownButton.prototype.run = function () {
+    var self = this;
+
     function onButtonClick() {
       var pageY = window.pageYOffset || document.documentElement.scrollTop;
 
-      switch (this.currentState) {
+      switch (self.currentState) {
         case 'up':
-          this.pageYLabel = pageY;
+          self.pageYLabel = pageY;
           window.scrollTo(0, 0);
-          this.pointerDown();
+          self.pointerDown();
           break;
 
         case 'down':
-          window.scrollTo(0, this.pageYLabel);
-          this.pointerUp();
+          window.scrollTo(0, self.pageYLabel);
+          self.pointerUp();
       }
     }
 
@@ -55,29 +57,29 @@
       var pageY = window.pageYOffset || document.documentElement.scrollTop;
       var innerHeight = document.documentElement.clientHeight;
 
-      switch (this.currentState) {
+      switch (self.currentState) {
         case '':
           if (pageY > innerHeight) {
-            this.pointerUp();
+            self.pointerUp();
           }
           break;
 
         case 'up':
           if (pageY < innerHeight) {
-            this.hideButton();
+            self.hideButton();
           }
           break;
 
         case 'down':
           if (pageY > innerHeight) {
-            this.pointerUp();
+            self.pointerUp();
           }
           break;
       }
     }
 
-    window.addEventListener('scroll', onWindowScroll.bind(this));
-    this.button.addEventListener('click', onButtonClick.bind(this));
+    window.addEventListener('scroll', onWindowScroll);
+    this.button.addEventListener('click', onButtonClick);
   };
 
   findButton();
