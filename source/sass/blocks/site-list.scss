@@ -85,7 +85,7 @@
   }
 
   .site-list__description {
-    max-width: 14%;
+    max-width: 33%;
 
     @include ellipsis();
 
@@ -112,7 +112,7 @@
     flex-grow: 1;
     order: 0;
     align-self: stretch;
-    /* display: flex; */ /* stylelint-disable-line */
+    display: flex; /* stylelint-disable-line */
     flex-wrap: wrap;
 
     width: 70%;

@@ -1,6 +1,5 @@
 .logo {
   display: block;
-  max-width: calc(12% + 160px);
   padding: 0.714em 6%;
 
   font: 400 1.556em/1.071em "Russo One", "Verdana", sans-serif;
@@ -41,10 +40,15 @@
   }
 }
 
+.logo__inner {
+  display: block;
+  width: 160px;
+}
+
 @media (min-width: $tablet-width) {
   .logo {
-    max-width: calc(8% + 160px);
     padding: 0.625em 4%;
+    padding-right: 2%;
 
     font-size: 1.778em;
     line-height: 1.125em;
@@ -53,6 +57,7 @@
       align-self: center;
 
       display: inline-block;
+      margin-right: auto;
 
       vertical-align: middle;
       text-align: left;
@@ -87,7 +92,6 @@
 
 @media (min-width: $desktop-width) {
   .logo {
-    max-width: calc(6% + 160px);
     padding-left: 3%;
     padding-right: 3%;
   }
