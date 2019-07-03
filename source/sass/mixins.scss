@@ -31,7 +31,7 @@
 @mixin underline($color) {
   background: linear-gradient($color, $color) no-repeat;
   background-size: 100% 2px;
-  background-position: 0 1.2em;
+  background-position: 0 100%;
 }
 
 @mixin lg-heading-size() {
