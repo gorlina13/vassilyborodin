@@ -3,7 +3,7 @@
 
   width: 100%;
   height: 0;
-  padding-bottom: 134.286%;
+  padding-bottom: 152%;
 
   background-color: $body-bg-color;
 }
@@ -14,7 +14,7 @@
   left: 0;
 
   width: 100%;
-  height: 74.468%;
+  height: 65.7895%;
 
   background-color: #cccccc;
 
@@ -53,12 +53,13 @@
 
 .audio__button {
   position: absolute;
-  left: 2.86%;
-  bottom: 27.7%;
+  left: 10px;
+  bottom: 34.2105%;
 
   display: none;
   width: 50px;
   height: 50px;
+  margin-bottom: 10px;
   padding: 0;
 
   border: none;
