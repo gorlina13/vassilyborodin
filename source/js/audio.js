@@ -51,27 +51,33 @@
 
   Player.prototype.setup = function (audio) {
     var link = audio.querySelector('.audio__link');
-    var self = this;
     var id = this.getId(link);
 
-    function onAudioChildrenClick() {
-      var iframe = self.createIframe(id);
-
-      button.parentElement.removeChild(button);
-      link.parentElement.removeChild(link);
-      audio.appendChild(iframe);
-    }
-
     if (id) {
+      var self = this;
       var button = audio.querySelector('.audio__button');
 
-      /* В верстке высота audio больше высоты link
-      (зарезервировано место под плейлист, приходящий с Bandcamp).
-      Поэтому обработчик клика поставлен не на audio. */
-      link.addEventListener('click', onAudioChildrenClick);
-      button.addEventListener('click', onAudioChildrenClick);
+      audio.addEventListener('click', onAudioClick);
       link.removeAttribute('href');
       audio.classList.add('audio--enabled');
+    }
+
+    function onAudioClick(evt) {
+      var target = evt.target;
+
+      while (target !== audio) {
+        if (target === button || target === link) {
+          var iframe = self.createIframe(id);
+
+          button.parentElement.removeChild(button);
+          link.parentElement.removeChild(link);
+          audio.appendChild(iframe);
+          audio.removeEventListener('click', onAudioClick);
+          return;
+        }
+
+        target = target.parentElement;
+      }
     }
   };
 
