@@ -18,6 +18,9 @@ var htmlmin = require("gulp-htmlmin");
 var uglify = require("gulp-uglify");
 var pipeline = require("readable-stream").pipeline;
 var sourcemaps = require("gulp-sourcemaps");
+var gulpIf = require("gulp-if");
+
+var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
 function style() {
   return gulp.src("source/sass/style.scss")
@@ -83,12 +86,12 @@ function html() {
 function js() {
   return pipeline(
     gulp.src("source/js/**/*.js"),
-    sourcemaps.init(),
+    gulpIf(isDevelopment, sourcemaps.init()),
     uglify(),
     rename(function (path) {
       path.basename += ".min";
     }),
-    sourcemaps.write(),
+    gulpIf(isDevelopment, sourcemaps.write()),
     gulp.dest("build/js")
   );
 }
