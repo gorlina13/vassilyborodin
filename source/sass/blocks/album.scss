@@ -56,6 +56,14 @@
   fill: $ordinary-heading-color;
 }
 
+@media (min-width: 426px) and (max-width: $mobile-width-only) {
+  .album {
+    max-width: 426px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+  }
+}
+
 @media (min-width: $tablet-width) {
   .album {
     flex-shrink: 0;
