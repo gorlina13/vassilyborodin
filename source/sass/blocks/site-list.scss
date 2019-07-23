@@ -14,7 +14,7 @@
   position: relative;
 
   display: block;
-  padding: 0.4em 22%;
+  padding: 0.4em 33%;
 
   font: 700 1em/2.222em "PT Sans", "Verdana", sans-serif;
   text-align: center;
@@ -85,7 +85,7 @@
   }
 
   .site-list__description {
-    max-width: 33%;
+    max-width: 27%;
 
     @include ellipsis();
 
