@@ -64,17 +64,18 @@
 
   .book__title ~ * {
     margin-top: 1.5em;
+    margin-bottom: 0;
   }
 
   .book > :last-child {
+    margin-bottom: 1.5em;
+  }
+
+  .book__title + * {
     margin-top: auto;
   }
 
-  .book > :nth-last-child(2) {
-    margin-bottom: 3em;
-  }
-
-  .book .book__title {
+  .book__title {
     margin-top: 0;
     margin-bottom: 1.666em;
   }
