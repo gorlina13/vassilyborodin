@@ -42,7 +42,9 @@ function clean() {
 function copy() {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/img/**"
+    "source/img/**",
+    "source/*.png",
+    "source/*.webmanifest"
   ], {
     base: "source"
   })
@@ -96,6 +98,11 @@ function js() {
   );
 }
 
+function webmanifest() {
+  return gulp.src("source/*.webmanifest")
+    .pipe(gulp.dest("build"));
+}
+
 function serve(done) {
   server.init({
     server: "build/",
@@ -116,6 +123,7 @@ function watch() {
   gulp.watch("source/sass/**/*.{scss,sass}", style);
   gulp.watch("source/*.html", gulp.series(html, reload));
   gulp.watch("source/js/**/*.js", gulp.series(js, reload));
+  gulp.watch("source/*.webmanifest", gulp.series(webmanifest, reload));
 }
 
 exports.style = style;
