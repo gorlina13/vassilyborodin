@@ -55,12 +55,6 @@
   }
 }
 
-@media (min-width: $tablet-width) {
-  .texts__list {
-    padding: 0 4%;
-  }
-}
-
 @media (min-width: $desktop-width) {
   .texts {
     display: flex;

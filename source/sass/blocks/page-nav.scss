@@ -44,12 +44,6 @@
   }
 }
 
-@media (min-width: $tablet-width) {
-  .page-nav {
-    padding: 0 4%;
-  }
-}
-
 @media (min-width: $desktop-width) {
   .page-nav {
     flex-shrink: 0;

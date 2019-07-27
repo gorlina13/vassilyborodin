@@ -132,11 +132,6 @@
 }
 
 @media (min-width: $tablet-width) {
-  .play__description,
-  .play__list {
-    padding: 0 4%;
-  }
-
   .play__speech .character {
     &--min,
     &--min + span,

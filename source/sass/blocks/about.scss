@@ -218,10 +218,6 @@
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-align: end;
-
-    & .about__title {
-      text-align: right;
-    }
   }
 
   // ms-grid!
@@ -437,7 +433,6 @@
     -ms-grid-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
   }
 
-  // test!
   .about__grid *:nth-child(2n+7),
   .about__grid *:nth-child(2n+8),
   .about__text,
@@ -499,6 +494,10 @@
     -ms-grid-row: 6;
     -ms-grid-column: 1;
     -ms-grid-column-align: start;
+  }
+
+  .about__title--desktop-right {
+    text-align: right;
   }
 
   // ms-grid!

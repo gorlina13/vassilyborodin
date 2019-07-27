@@ -44,8 +44,6 @@
 
 @media (min-width: $tablet-width) {
   .page-title {
-    padding: 0 4%;
-
     &--index {
       @include lg-heading-size();
 
@@ -67,16 +65,14 @@
 
 @media (min-width: $desktop-width) {
   .page-title {
-    padding-right: 3%;
-    padding-left: 3%;
+    padding: 0 3%;
 
     &--inner-page {
       width: 55%;
     }
 
     &--editions {
-      padding-right: 0.667em;
-      padding-left: 0.667em;
+      padding: 0 0.667em;
     }
   }
 
