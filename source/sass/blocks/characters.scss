@@ -1,29 +1,26 @@
 .characters {
   padding: 0 6%;
-
-  @include break-word();
 }
 
 .characters__title {
   @include paragraph-size();
 
   font-weight: 700;
-  font-family: "PT Sans", "Verdana", sans-serif;
   color: #333333;
 
   background-color: $body-bg-color;
 }
 
 .characters__list {
-  @include reset-list();
+  margin: 0;
+  padding: 0;
+
+  @include fix-list();
 }
 
 .characters__item {
-  margin: 0;
-
-  font: 400 1em/1.5em "PT Sans", "Verdana", sans-serif;
-  text-transform: uppercase;
-  color: inherit;
+  font-size: 1em;
+  line-height: 1.5em;
 
   &:last-child {
     margin-bottom: 1.5em;

@@ -1,11 +1,8 @@
 .event-list {
-  @include reset-list();
+  margin: 0;
+  padding: 0;
 
-  color: #000000;
-
-  @include break-word();
-
-  background-color: $body-bg-color;
+  @include fix-list();
 }
 
 .event-list__item {

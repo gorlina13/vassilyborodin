@@ -1,13 +1,7 @@
 .site-list {
-  flex-shrink: 0;
-  flex-basis: auto;
-  order: -1;
+  padding: 0;
 
-  @include reset-list();
-}
-
-.site-list__item {
-  @include break-word();
+  @include fix-list();
 }
 
 .site-list__link {
@@ -16,7 +10,9 @@
   display: block;
   padding: 0.4em 33%;
 
-  font: 700 1em/2.222em "PT Sans", "Verdana", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 2.222em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -108,14 +104,10 @@
 @media (min-width: $tablet-width) {
   .site-list {
     display: inline-block;
+    width: 70%;
 
-    flex-grow: 1;
-    order: 0;
-    align-self: stretch;
     display: flex; /* stylelint-disable-line */
     flex-wrap: wrap;
-
-    width: 70%;
 
     vertical-align: middle;
     color: #ffffff;

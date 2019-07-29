@@ -1,11 +1,9 @@
 .edition-list {
-  @include reset-list();
-
   padding: 1.111em 6%;
 
-  color: #ffffff;
+  @include fix-list();
 
-  @include break-word();
+  color: #ffffff;
 
   background-color: $footer-bg-color;
 }
@@ -24,14 +22,15 @@
   display: inline-block;
   padding: 0 0 0 1.111em;
 
-  font: 700 1em/2.222em "PT Sans", "Verdana", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 2.222em;
   text-align: right;
   text-transform: uppercase;
   text-decoration: none;
   vertical-align: top;
-  color: #ffffff;
+  color: inherit;
 
-  background-color: $footer-bg-color;
   border: 1px solid transparent;
 
   &[href] {
@@ -51,7 +50,7 @@
 
   &[href]:active {
     border-color: #ffffff;
-    background-color: $footer-bg-color;
+    background-color: transparent;
     box-shadow: none;
   }
 
@@ -90,7 +89,7 @@
   &--external[href]:hover,
   &--external:focus,
   &--external[href]:active {
-    background-color: $footer-bg-color;
+    background-color: transparent;
     border-color: transparent;
     box-shadow: none;
   }
@@ -172,9 +171,6 @@
 
 @media (min-width: $tablet-width) {
   .edition-list {
-    flex-shrink: 0;
-    flex-basis: auto;
-
     width: 30%;
     float: right;
     padding-left: 4%;

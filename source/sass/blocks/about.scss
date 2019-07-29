@@ -1,10 +1,7 @@
 .about {
   padding-bottom: 1.5em;
 
-  font-family: "PT Sans", "Verdana", sans-serif;
   color: #ffffff;
-
-  @include break-word();
 
   background-color: $ordinary-heading-color;
 }
@@ -12,9 +9,6 @@
 .about__text {
   margin: 0;
   padding: 0 6%;
-
-  font-size: 1em;
-  line-height: 1.5em;
 }
 
 .about__title {
@@ -30,7 +24,6 @@
 }
 
 .about__link {
-  font: inherit;
   text-decoration: none;
   color: inherit;
 
@@ -63,9 +56,6 @@
   display: block;
   margin: 1.5em 0;
   padding: 0 6%;
-
-  font-size: 1em;
-  line-height: 1.5em;
 }
 
 .about__image,
@@ -533,7 +523,7 @@
       margin: 0 auto;
       padding: 0.5em 0 0;
 
-      color: #000000;
+      color: inherit;
 
       background-color: transparent;
     }

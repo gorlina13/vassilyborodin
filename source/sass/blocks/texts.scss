@@ -1,35 +1,23 @@
 .texts__list {
-  @include reset-list();
+  margin: 0;
+  padding: 0 6%;
 
-  padding-left: 6%;
-  padding-right: 6%;
-
-  font-weight: 400;
-  font-family: "PT Sans", "Verdana", sans-serif;
-  color: #000000;
-
-  @include break-word();
-
-  background-color: $body-bg-color;
+  @include fix-list();
 }
 
 .texts__title {
   @include ordinary-heading();
 
   text-transform: uppercase;
+
+  background-color: $body-bg-color;
 }
 
 .texts__info {
   @include paragraph-size();
-
-  color: inherit;
 }
 
 .texts__link {
-  display: block;
-
-  @include paragraph-size();
-
   color: inherit;
 
   &[href] {
@@ -47,11 +35,6 @@
 
   &[href]:active {
     text-decoration: none;
-  }
-
-  .texts__info & {
-    display: inline;
-    margin: 0;
   }
 }
 
@@ -80,5 +63,11 @@
 
   .texts__item:last-child {
     margin-bottom: 4.5em;
+  }
+
+  .texts__nav {
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: auto;
   }
 }

@@ -5,8 +5,6 @@
   font: 400 1.556em/1.071em "Russo One", "Impact", "Verdana", sans-serif;
   text-decoration: none;
 
-  @include break-word();
-
   &[href] {
     cursor: pointer;
   }
@@ -16,10 +14,6 @@
   }
 
   &--main-nav {
-    flex-shrink: 0;
-    flex-basis: auto;
-    align-self: flex-start;
-
     color: $logo-in-nav-color;
 
     background-color: $body-bg-color;
@@ -54,23 +48,15 @@
     line-height: 1.125em;
 
     &--main-nav {
-      align-self: center;
-
       display: inline-block;
-      margin-right: auto;
 
       vertical-align: middle;
       text-align: left;
     }
 
     &--footer {
-      flex-shrink: 0;
-      flex-basis: auto;
-      order: -1;
-
       display: block;
       float: left;
-      margin-right: auto;
       padding-top: 0.938em;
 
       color: #ffffff;

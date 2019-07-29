@@ -1,24 +1,18 @@
-.play {
-  color: #000000;
-
-  @include break-word();
-
-  background-color: $body-bg-color;
-}
-
 .play__description {
   @include ordinary-heading();
 
   padding: 0 6%;
 
   text-transform: lowercase;
+
+  background-color: $body-bg-color;
 }
 
 .play__list {
   margin: 0;
   padding: 0 6%;
 
-  list-style: none;
+  @include fix-list();
 }
 
 .play__scene:last-child {
@@ -29,9 +23,10 @@
   @include paragraph-size();
 
   font-weight: 700;
-  font-family: "PT Sans", "Verdana", sans-serif;
   text-align: justify;
   color: #333333;
+
+  background-color: $body-bg-color;
 
   & i {
     font-style: normal;
@@ -46,8 +41,8 @@
 .play__speech {
   margin: 0;
 
-  font: 400 1em/1.5em "PT Sans", "Verdana", sans-serif;
-  color: #000000;
+  font-size: 1em;
+  line-height: 1.5em;
 
   &--top {
     margin-top: 1.5em;

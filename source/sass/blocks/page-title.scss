@@ -5,21 +5,12 @@
 
   font-family: "Russo One", "Impact", "Verdana", sans-serif;
   font-weight: 400;
+  color: $ordinary-heading-color;
 
-  @include break-word();
+  background-color: $body-bg-color;
 
   &--index {
     margin-top: 0;
-
-    color: #ffffff;
-
-    background-color: $ordinary-heading-color;
-  }
-
-  &--inner-page {
-    color: $ordinary-heading-color;
-
-    background-color: $body-bg-color;
   }
 }
 
@@ -42,14 +33,18 @@
   }
 }
 
+@media (max-width: $mobile-width-only) {
+  .page-title--index {
+    color: inherit;
+
+    background-color: transparent;
+  }
+}
+
 @media (min-width: $tablet-width) {
   .page-title {
     &--index {
       @include lg-heading-size();
-
-      color: $ordinary-heading-color;
-
-      background-color: $body-bg-color;
     }
 
     &--editions {

@@ -3,12 +3,6 @@
   flex-shrink: 0;
   flex-basis: auto;
 
-  color: #000000;
-
-  @include break-word();
-
-  background-color: $body-bg-color;
-
   &--eighteen-plus {
     position: relative;
   }
@@ -28,8 +22,6 @@
   text-transform: none;
   color: $ordinary-heading-color;
   overflow: hidden;
-
-  background-color: transparent;
 }
 
 .page-main__warning {
@@ -39,9 +31,7 @@
   @include paragraph-size();
 
   font-weight: 400;
-  font-family: "PT Sans", "Verdana", sans-serif;
   text-transform: uppercase;
-  color: #000000;
 }
 
 @media (min-width: $tablet-width) {
