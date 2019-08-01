@@ -42,10 +42,6 @@
       font-size: inherit;
     }
   }
-
-  .page-main__sticker {
-    right: 6%;
-  }
 }
 
 @media (min-width: $desktop-width) {
@@ -58,7 +54,7 @@
   }
 
   .page-main__sticker {
-    left: 55%;
+    left: 75%;
     right: auto;
 
     text-align: left;
