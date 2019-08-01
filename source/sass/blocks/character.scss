@@ -1,11 +1,8 @@
 .character {
   font-weight: 400;
   text-transform: uppercase;
-  color: #000000;
-
-  background-color: $body-bg-color;
 }
 
-.character__lower {
+.character__tail {
   text-transform: lowercase;
 }
