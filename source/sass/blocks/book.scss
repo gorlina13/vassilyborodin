@@ -50,28 +50,27 @@
     padding: 0 1.5em;
   }
 
-  .book > * {
+  .book__title {
     flex-shrink: 0;
     flex-basis: auto;
 
     width: 100%;
-  }
-
-  .book__title ~ * {
-    margin-top: 1.5em;
-    margin-bottom: 0;
-  }
-
-  .book > :last-child {
-    margin-bottom: 1.5em;
-  }
-
-  .book__title + * {
-    margin-top: auto;
-  }
-
-  .book__title {
     margin-top: 0;
     margin-bottom: 1.666em;
+  }
+
+  .book__info {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  .book__title + .book__info {
+    margin-top: auto;
   }
 }
