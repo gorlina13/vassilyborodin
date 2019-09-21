@@ -27,7 +27,7 @@
   text-decoration: none;
   color: inherit;
 
-  @include underline($custom-underline-color);
+  @include underline($about-link-underline-color);
 
   &[href] {
     cursor: pointer;
@@ -35,20 +35,15 @@
 
   &[href]:hover,
   &:focus {
-    color: #333333;
+    outline: 2px solid $about-link-underline-color;
 
-    background: none;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-
-  &[href]:hover {
     @include hover-transition();
   }
 
   &[href]:active {
-    color: #333333;
+    color: #000000;
 
-    background-color: #ffffff;
+    background-color: $body-bg-color;
   }
 }
 
