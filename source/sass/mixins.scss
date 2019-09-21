@@ -28,6 +28,10 @@
   background: linear-gradient($color, $color) no-repeat;
   background-size: 100% 2px;
   background-position: 0 100%;
+
+  &[href]:active {
+    background-image: none;
+  }
 }
 
 @mixin lg-heading-size() {
