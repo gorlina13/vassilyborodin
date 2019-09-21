@@ -36,7 +36,13 @@
 
 .logo__inner {
   display: block;
-  width: 160px;
+  width: 5em;
+}
+
+@supports (width: 7ch) {
+  .logo__inner {
+    width: 7ch;
+  }
 }
 
 @media (min-width: $tablet-width) {
