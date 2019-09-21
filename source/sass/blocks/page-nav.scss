@@ -18,10 +18,13 @@
 }
 
 .page-nav__item:last-child {
-  margin-bottom: 4.5em;
+  margin-bottom: 3em;
 }
 
 .page-nav__link {
+  display: block;
+  padding-bottom: 1.5em;
+
   font-size: 1em;
   line-height: 1.5em;
   color: inherit;
