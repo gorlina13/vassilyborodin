@@ -1,11 +1,15 @@
 .page-footer {
-  flex-shrink: 0;
-
   padding: 1.111em 0;
 
   color: #ffffff;
 
   background-color: $footer-bg-color;
+}
+
+@supports (display: grid) {
+  .page-footer {
+    grid-row: 3;
+  }
 }
 
 .page-footer__edition-list {
@@ -91,6 +95,10 @@
 }
 
 @media (min-width: $desktop-width) {
+  .page-footer {
+    flex-shrink: 0;
+  }
+
   .page-footer__social {
     order: 0;
 

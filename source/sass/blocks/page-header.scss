@@ -1,5 +1,7 @@
-.page-header {
-  flex-shrink: 0;
+@supports (display: grid) {
+  .page-header {
+    grid-row: 1;
+  }
 }
 
 @media (min-width: $tablet-width) {
@@ -13,6 +15,8 @@
 
 @media (min-width: $desktop-width) {
   .page-header {
+    flex-shrink: 0;
+
     color: #ffffff;
 
     background-color: $menu-bg-color;

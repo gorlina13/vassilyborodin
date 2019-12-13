@@ -1,7 +1,26 @@
-.flex-page {
-  display: flex;
-  flex-direction: column;
+@supports (display: grid) {
+  .flex-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
 
-  // height instead of min-height for IE 11, see flexbugs # 3
-  height: 100vh;
+    min-height: 100%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .flex-page {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+  }
+
+  @supports (display: grid) {
+    .flex-page {
+      display: grid;
+
+      height: auto;
+    }
+  }
 }

@@ -1,10 +1,12 @@
 .page-main {
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: auto;
-
   &--eighteen-plus {
     position: relative;
+  }
+}
+
+@supports (display: grid) {
+  .page-main {
+    grid-row: 2;
   }
 }
 
@@ -46,11 +48,20 @@
 
 @media (min-width: $desktop-width) {
   .page-main {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
     align-self: center;
 
     width: 100%;
     max-width: $desktop-width;
     margin: 0 auto;
+  }
+
+  @supports (display: grid) {
+    .page-main {
+      align-self: stretch;
+    }
   }
 
   .page-main__sticker {
