@@ -35,8 +35,6 @@
   &[href]:hover,
   &:focus {
     outline: 2px solid $about-link-underline-color;
-
-    @include hover-transition();
   }
 
   &[href]:active {
