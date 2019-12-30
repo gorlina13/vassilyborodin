@@ -22,11 +22,12 @@
 }
 
 .page-nav__link {
-  display: block;
+  display: inline-block;
   padding-bottom: 1.5em;
 
   font-size: 1em;
   line-height: 1.5em;
+  vertical-align: top;
   color: inherit;
 
   &[href] {
