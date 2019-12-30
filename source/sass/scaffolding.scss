@@ -1,8 +1,6 @@
 @font-face {
   font-family: "PT Sans";
   src:
-    local("PT Sans"),
-    local("PTSans-Regular"),
     url("../fonts/ptsans.woff2") format("woff2"),
     url("../fonts/ptsans.woff") format("woff");
   font-weight: 400;
@@ -13,8 +11,6 @@
 @font-face {
   font-family: "PT Sans";
   src:
-    local("PT Sans Bold"),
-    local("PTSans-Bold"),
     url("../fonts/ptsansbold.woff2") format("woff2"),
     url("../fonts/ptsansbold.woff") format("woff");
   font-weight: 700;
@@ -25,8 +21,6 @@
 @font-face {
   font-family: "Russo One";
   src:
-    local("Russo One"),
-    local("RussoOne-Regular"),
     url("../fonts/russoone.woff2") format("woff2"),
     url("../fonts/russoone.woff") format("woff");
   font-weight: 400;
