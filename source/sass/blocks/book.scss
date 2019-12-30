@@ -11,8 +11,9 @@
 }
 
 .book__link {
-  display: block;
+  display: inline-block;
 
+  vertical-align: top;
   color: inherit;
 
   &[href] {
