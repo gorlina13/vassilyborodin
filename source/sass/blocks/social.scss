@@ -15,12 +15,10 @@
 
   display: inline-block;
   margin-bottom: 0.222em;
+  margin-left: 1%;
+  margin-right: 1%;
 
   vertical-align: top;
-
-  &:not(:last-child) {
-    margin-right: 2%;
-  }
 }
 
 .social__link {
@@ -83,15 +81,16 @@
     padding: 1.667em 2%;
     padding-bottom: 1.444em;
   }
-
-  .social__item:not(:last-child) {
-    margin-right: 1%;
-  }
 }
 
 @media (min-width: $desktop-width) {
   .social {
     width: 100%;
     padding: 1.111em 1%;
+  }
+
+  .social__item {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
 }

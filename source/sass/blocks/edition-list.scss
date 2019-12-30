@@ -9,10 +9,12 @@
 }
 
 .edition-list__item {
+  margin-bottom: 0.556em;
+
   text-align: right;
 
-  &:not(:last-child) {
-    margin-bottom: 0.556em;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -201,15 +203,12 @@
     flex-basis: auto;
 
     display: inline-block;
+    margin-left: 0.556em;
 
     vertical-align: top;
 
     &:last-child {
       margin-bottom: 0.556em;
-    }
-
-    &:not(:first-child) {
-      margin-left: 0.556em;
     }
   }
 
