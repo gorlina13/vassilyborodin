@@ -1,12 +1,12 @@
 'use strict';
 
 (function () {
-  function findButton() {
+  function makeUpDownButton() {
     var button = document.querySelector('.up-down');
 
-    if (button !== null) {
+    if (button) {
       var upDownButton = new UpDownButton(button);
-      upDownButton.run();
+      upDownButton.setup();
     }
   }
 
@@ -16,25 +16,36 @@
     this.pageYLabel = 0;
   }
 
-  UpDownButton.prototype.pointerUp = function () {
+  UpDownButton.prototype.turnPointerUp = function () {
     this.button.classList.remove('up-down--down');
     this.button.classList.add('up-down--up');
     this.currentState = 'up';
   };
 
-  UpDownButton.prototype.pointerDown = function () {
+  UpDownButton.prototype.turnPointerDown = function () {
     this.button.classList.remove('up-down--up');
     this.button.classList.add('up-down--down');
     this.currentState = 'down';
   };
 
-  UpDownButton.prototype.hideButton = function () {
+  UpDownButton.prototype.hide = function () {
     this.button.classList.remove('up-down--up');
     this.button.classList.remove('up-down--down');
     this.currentState = '';
   };
 
-  UpDownButton.prototype.run = function () {
+  UpDownButton.prototype.goUp = function (pageY) {
+    this.pageYLabel = pageY;
+    window.scrollTo(0, 0);
+    this.turnPointerDown();
+  };
+
+  UpDownButton.prototype.goDown = function () {
+    window.scrollTo(0, this.pageYLabel);
+    this.turnPointerUp();
+  };
+
+  UpDownButton.prototype.setup = function () {
     var self = this;
 
     function onButtonClick() {
@@ -42,14 +53,12 @@
 
       switch (self.currentState) {
         case 'up':
-          self.pageYLabel = pageY;
-          window.scrollTo(0, 0);
-          self.pointerDown();
+          self.goUp(pageY);
           break;
 
         case 'down':
-          window.scrollTo(0, self.pageYLabel);
-          self.pointerUp();
+          self.goDown();
+          break;
       }
     }
 
@@ -60,19 +69,19 @@
       switch (self.currentState) {
         case '':
           if (pageY > innerHeight) {
-            self.pointerUp();
+            self.turnPointerUp();
           }
           break;
 
         case 'up':
           if (pageY < innerHeight) {
-            self.hideButton();
+            self.hide();
           }
           break;
 
         case 'down':
           if (pageY > innerHeight) {
-            self.pointerUp();
+            self.turnPointerUp();
           }
           break;
       }
@@ -82,5 +91,5 @@
     this.button.addEventListener('click', onButtonClick);
   };
 
-  findButton();
+  makeUpDownButton();
 })();
