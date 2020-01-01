@@ -1,36 +1,31 @@
 'use strict';
 
 (function () {
-  function findAudios() {
+  function handleAudios() {
     var archiveAudios = document.querySelectorAll('.audio--archive');
     var bandcampAudios = document.querySelectorAll('.audio--bandcamp');
     var archivePlayer = new ArchivePlayer();
     var bandcampPlayer = new BandcampPlayer();
 
-    for (var i = 0; i < archiveAudios.length; i++) {
-      archivePlayer.setup(archiveAudios[i]);
-    }
+    Array.prototype.forEach.call(archiveAudios, function (archiveAudio) {
+      archivePlayer.setup(archiveAudio);
+    });
 
-    for (var j = 0; j < bandcampAudios.length; j++) {
-      bandcampPlayer.setup(bandcampAudios[j]);
-    }
+    Array.prototype.forEach.call(bandcampAudios, function (bandcampAudio) {
+      bandcampPlayer.setup(bandcampAudio);
+    });
   }
 
-  function Player() {
-    this.URL_START = '';
-    this.URL_END = '';
-    this._additionalAttrs = {};
+  function Player(options) {
+    this.URL_START = options.urlStart;
+    this.URL_END = options.urlEnd;
+    this._additionalAttrs = options.additionalAttrs;
   }
 
   Player.prototype.createIframe = function (id) {
-    var self = this;
     var iframe = document.createElement('iframe');
 
-    function generateURL(start, end) {
-      return self[start] + id + self[end];
-    }
-
-    iframe.src = generateURL('URL_START', 'URL_END');
+    iframe.src = this.URL_START + id + this.URL_END;
 
     for (var key in this._additionalAttrs) {
       if (!this._additionalAttrs.hasOwnProperty(key)) {
@@ -40,7 +35,6 @@
     }
 
     iframe.classList.add('audio__media');
-
     return iframe;
   };
 
@@ -85,6 +79,7 @@
     this.URL_START = 'https://archive.org/embed/';
     this.URL_END = '&playlist=1';
     this._additionalAttrs = {
+      'allow': 'fullscreen',
       'allowfullscreen': ''
     };
   }
@@ -116,5 +111,5 @@
     return this.ALBUMS[key];
   };
 
-  findAudios();
+  handleAudios();
 })();
