@@ -1,13 +1,13 @@
 'use strict';
 
 (function () {
-  function findElements() {
+  function makeNav() {
     var nav = document.querySelector('.main-nav');
-    var navToggle = document.querySelector('.main-nav__toggle');
+    var navToggle = nav.querySelector('.main-nav__toggle');
 
-    if (nav !== null && navToggle !== null) {
+    if (nav && navToggle) {
       var mainNav = new MainNav(nav, navToggle);
-      mainNav.run();
+      mainNav.setup();
     }
   }
 
@@ -28,7 +28,7 @@
     this.navToggle.setAttribute('aria-expanded', false);
   };
 
-  MainNav.prototype.run = function () {
+  MainNav.prototype.setup = function () {
     var self = this;
 
     function onNavToggleClick() {
@@ -44,5 +44,5 @@
     this.navToggle.addEventListener('click', onNavToggleClick);
   };
 
-  findElements();
+  makeNav();
 })();
