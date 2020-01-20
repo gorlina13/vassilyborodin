@@ -20,6 +20,7 @@
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-htmlacademy": "^0.5.2",
+    "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
@@ -46,7 +47,8 @@
     "eslint": "eslint source/js/",
     "test": "npm run editorconfig && npm run stylelint && npm run eslint",
     "build": "gulp",
-    "start": "npm run build && gulp dev"
+    "start": "npm run build && gulp dev",
+    "deploy": "npm run build && gulp deploy"
   },
   "editorconfig-cli": [
     "*.json",
