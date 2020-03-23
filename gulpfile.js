@@ -9,8 +9,6 @@ var server = require("browser-sync").create();
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
 var del = require("del");
-var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
 var svgstore = require("gulp-svgstore");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
@@ -50,22 +48,6 @@ function copy() {
     base: "source"
   })
     .pipe(gulp.dest("build"));
-}
-
-function images() {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
-      imagemin.svgo()
-    ]))
-    .pipe(gulp.dest("build/img"));
-}
-
-function webpImages() {
-  return gulp.src("source/img/**/*.{png,jpg}")
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("build/img"));
 }
 
 function sprite() {
@@ -138,8 +120,6 @@ function deploy(done) {
 exports.style = style;
 exports.clean = clean;
 exports.copy = copy;
-exports.images = images;
-exports.webpImages = webpImages;
 exports.sprite = sprite;
 exports.html = html;
 exports.js = js;
