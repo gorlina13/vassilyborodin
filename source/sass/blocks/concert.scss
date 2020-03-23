@@ -14,6 +14,10 @@
   display: block;
 }
 
+.concert__info {
+  @include paragraph-size();
+}
+
 .concert__icon {
   display: block;
   width: 1.778em;
@@ -44,16 +48,25 @@
     margin-top: 0;
   }
 
+  .concert__info {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .concert__info:last-of-type {
+    margin-bottom: 1.5em;
+  }
+
   .concert__icon {
     flex-shrink: 0;
     flex-basis: auto;
     align-self: flex-start;
 
     margin-bottom: 0;
-
-    .concert__title + & {
-      margin-top: auto;
-    }
+    margin-top: auto;
   }
 
   .concert__video {
@@ -63,6 +76,7 @@
     margin-top: 1.5em;
     margin-bottom: 0;
 
+    .concert__info + &,
     .concert__title + & {
       margin-top: auto;
     }

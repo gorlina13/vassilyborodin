@@ -100,10 +100,7 @@
     align-self: flex-start;
 
     margin-bottom: 0;
-
-    &:nth-last-child(2) {
-      margin-top: auto;
-    }
+    margin-top: auto;
   }
 
   .album__audio {
@@ -112,10 +109,10 @@
 
     margin-top: 1.5em;
     margin-bottom: 0;
-  }
 
-  .album__info + .album__audio,
-  .album__title + .album__audio {
-    margin-top: auto;
+    .album__info + &,
+    .album__title + & {
+      margin-top: auto;
+    }
   }
 }
