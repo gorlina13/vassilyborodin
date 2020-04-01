@@ -97,7 +97,11 @@
       '--4': 2697414893
     };
 
-    this.URL_START = 'https://bandcamp.com/EmbeddedPlayer/album=';
+    this.TRACKS = {
+      '01042020': 3275218591
+    };
+
+    this.URL_START = 'https://bandcamp.com/EmbeddedPlayer/';
     this.URL_END = '/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/';
     this._additionalAttrs = {
       'seamless': ''
@@ -108,8 +112,24 @@
   BandcampPlayer.prototype.constructor = BandcampPlayer;
 
   BandcampPlayer.prototype.getId = function (link) {
-    var key = Player.prototype.getId(link);
-    return this.ALBUMS[key];
+    var urlArr = link.href.split('/');
+    var key = urlArr.pop();
+    var type = urlArr.pop();
+    var value;
+
+    switch (type) {
+      case 'album':
+        value = this.ALBUMS[key];
+        break;
+
+      case 'track':
+        value = this.TRACKS[key];
+        break;
+    }
+
+    if (value) {
+      return type + '=' + value;
+    }
   };
 
   handleAudios();
