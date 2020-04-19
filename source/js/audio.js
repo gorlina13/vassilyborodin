@@ -94,7 +94,8 @@
       '--2': 570357022,
       '--3': 1218095868,
       '2018': 3882505198,
-      '--4': 2697414893
+      '--4': 2697414893,
+      '--5': 4034128274
     };
 
     this.TRACKS = {
@@ -127,9 +128,11 @@
         break;
     }
 
-    if (value) {
-      return type + '=' + value;
+    if (!value) {
+      return value;
     }
+
+    return type + '=' + value;
   };
 
   handleAudios();
