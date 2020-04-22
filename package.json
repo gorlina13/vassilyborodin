@@ -15,7 +15,7 @@
   "homepage": "https://github.com/gorlina13/vassilyborodin#readme",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.0.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.6",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
@@ -34,9 +34,9 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.2",
     "node-sass": "^4.13.1",
-    "posthtml-include": "^1.4.0",
+    "posthtml-include": "^1.4.3",
     "readable-stream": "^3.6.0",
-    "stylelint": "^13.2.1",
+    "stylelint": "^13.3.3",
     "stylelint-config-htmlacademy": "^0.1.4"
   },
   "scripts": {
