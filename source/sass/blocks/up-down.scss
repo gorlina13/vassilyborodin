@@ -1,10 +1,8 @@
-@media (max-width: $mobile-width-only) {
-  .up-down {
-    &,
-    &--up,
-    &--down {
-      display: none;
-    }
+.up-down {
+  &,
+  &--up,
+  &--down {
+    display: none;
   }
 }
 
@@ -15,7 +13,6 @@
     right: 4%;
     z-index: 10;
 
-    display: none;
     width: 3.333em;
     height: 3.333em;
     padding: 0;

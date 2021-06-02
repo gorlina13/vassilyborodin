@@ -102,14 +102,8 @@
   }
 }
 
-@media (max-width: $mobile-width-only) {
-  .main-nav--nojs .main-nav__toggle {
-    display: none;
-  }
-
-  .main-nav--closed:not(.main-nav--nojs) .main-nav__list {
-    display: none;
-  }
+.main-nav--nojs .main-nav__toggle {
+  display: none;
 }
 
 @media (min-width: $tablet-width) {
@@ -138,7 +132,7 @@
 
 @media (min-width: $desktop-width) {
   .main-nav {
-    max-width: $desktop-width;
+    max-width: 66.666rem;
     margin: 0 auto;
   }
 }

@@ -1,7 +1,27 @@
 .site-list {
+  position: relative;
+
   padding: 0;
 
   @include fix-list();
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 0.333em;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    opacity: 0.2;
+  }
+}
+
+.main-nav--closed:not(.main-nav--nojs) .site-list {
+  display: none;
 }
 
 .site-list__link {
@@ -55,54 +75,34 @@
   bottom: 0.222em;
   left: 6%;
 
+  max-width: 27%;
+
+  @include ellipsis();
+
   font-weight: 400;
   font-size: 0.778em;
   line-height: 1.429em;
   text-align: left;
-}
 
-@media (max-width: $mobile-width-only) {
-  .site-list {
-    position: relative;
+  .site-list__item--current &::after {
+    content: "";
 
-    &::after {
-      content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
 
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    width: auto;
+    height: 0.214em;
 
-      height: 0.333em;
-
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
-      opacity: 0.2;
-    }
-  }
-
-  .site-list__description {
-    max-width: 27%;
-
-    @include ellipsis();
-
-    .site-list__item--current &::after {
-      content: "";
-
-      position: absolute;
-      top: -1px;
-      left: 0;
-      right: 0;
-
-      width: auto;
-      height: 0.214em;
-
-      background-color: rgba(255, 255, 255, 0.5);
-    }
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 
 @media (min-width: $tablet-width) {
   .site-list {
+    position: static;
+
     display: inline-block;
     width: 70%;
 
@@ -116,12 +116,22 @@
     border-left: 2px solid $menu-bg-color;
 
     &::after {
+      position: static;
+
       content: "";
 
       display: table;
+      height: auto;
+
+      background: none;
 
       clear: both;
     }
+  }
+
+  .main-nav--closed:not(.main-nav--nojs) .site-list {
+    display: inline-block;
+    display: flex; /* stylelint-disable-line */
   }
 
   .site-list__item {
@@ -174,8 +184,13 @@
     position: static;
 
     display: block;
+    max-width: none;
 
     font-size: 0.889em;
     text-align: center;
+
+    .site-list__item--current &::after {
+      display: none;
+    }
   }
 }
