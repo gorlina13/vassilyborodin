@@ -1,7 +1,7 @@
 "use strict";
 
 var gulp = require("gulp");
-var sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
@@ -17,7 +17,7 @@ var uglify = require("gulp-uglify");
 var pipeline = require("readable-stream").pipeline;
 var sourcemaps = require("gulp-sourcemaps");
 var gulpIf = require("gulp-if");
-var ghPages = require('gh-pages');
+var ghPages = require("gh-pages");
 
 var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
