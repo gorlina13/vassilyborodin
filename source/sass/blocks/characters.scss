@@ -13,9 +13,8 @@
 
 .characters__list {
   margin: 0;
-  padding: 0;
 
-  @include fix-list();
+  @include reset-list();
 }
 
 .characters__item {

@@ -1,8 +1,7 @@
 .book-list {
   margin: 0;
-  padding: 0;
 
-  @include fix-list();
+  @include reset-list();
 }
 
 .book-list__item {

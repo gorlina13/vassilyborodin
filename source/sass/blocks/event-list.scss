@@ -1,8 +1,7 @@
 .event-list {
   margin: 0;
-  padding: 0;
 
-  @include fix-list();
+  @include reset-list();
 }
 
 .event-list__item {

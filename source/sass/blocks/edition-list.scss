@@ -1,7 +1,6 @@
 .edition-list {
+  @include reset-list();
   padding: 1.111em 6%;
-
-  @include fix-list();
 
   color: #ffffff;
 

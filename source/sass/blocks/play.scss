@@ -10,9 +10,9 @@
 
 .play__list {
   margin: 0;
-  padding: 0 6%;
 
-  @include fix-list();
+  @include reset-list();
+  padding: 0 6%;
 }
 
 .play__scene:last-child {
