@@ -1,25 +1,25 @@
 "use strict";
 
-var gulp = require("gulp");
-var sass = require("gulp-sass")(require("sass"));
-var plumber = require("gulp-plumber");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var csso = require("gulp-csso");
-var rename = require("gulp-rename");
-var del = require("del");
-var svgstore = require("gulp-svgstore");
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
-var htmlmin = require("gulp-htmlmin");
-var uglify = require("gulp-uglify");
-var pipeline = require("readable-stream").pipeline;
-var sourcemaps = require("gulp-sourcemaps");
-var gulpIf = require("gulp-if");
-var ghPages = require("gh-pages");
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const plumber = require("gulp-plumber");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const server = require("browser-sync").create();
+const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+const del = require("del");
+const svgstore = require("gulp-svgstore");
+const posthtml = require("gulp-posthtml");
+const include = require("posthtml-include");
+const htmlmin = require("gulp-htmlmin");
+const uglify = require("gulp-uglify");
+const pipeline = require("readable-stream").pipeline;
+const sourcemaps = require("gulp-sourcemaps");
+const gulpIf = require("gulp-if");
+const ghPages = require("gh-pages");
 
-var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
 function style() {
   return gulp.src("source/sass/style.scss")
