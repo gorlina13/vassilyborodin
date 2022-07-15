@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .lines {
   @include paragraph-size();
 }

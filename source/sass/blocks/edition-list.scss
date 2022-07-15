@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 .edition-list {
   @include reset-list();
   padding: 1.111em 6%;

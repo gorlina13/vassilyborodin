@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @supports (display: grid) {
   .flex-page {
     display: grid;

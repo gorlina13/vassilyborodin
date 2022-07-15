@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 .social {
   display: flex;
   flex-wrap: wrap;

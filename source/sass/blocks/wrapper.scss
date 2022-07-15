@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @media (min-width: $desktop-width) {
   .wrapper {
     max-width: 66.666rem;

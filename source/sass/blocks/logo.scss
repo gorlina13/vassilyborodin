@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 .logo {
   display: block;
   padding: 0.714em 6%;

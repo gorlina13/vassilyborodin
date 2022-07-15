@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @supports (display: grid) {
   .page-header {
     grid-row: 1;
