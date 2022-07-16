@@ -1,6 +1,8 @@
 @use "variables" as *;
 
 .page-footer {
+  flex-shrink: 0;
+
   padding: 1.111em 0;
 
   color: #ffffff;
@@ -97,10 +99,6 @@
 }
 
 @media (min-width: $desktop-width) {
-  .page-footer {
-    flex-shrink: 0;
-  }
-
   .page-footer__social {
     order: 0;
 
