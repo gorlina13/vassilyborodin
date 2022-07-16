@@ -82,7 +82,7 @@
     }
   }
 
-  @for $i from 0 to length($selectors) { /* stylelint-disable-line */
+  @for $i from 0 to length($selectors) {
     #{nth($selectors, $i + 1)} {
       animation: shadow-inset-bottom-left 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     }
@@ -100,7 +100,7 @@
     }
   }
 
-  @for $i from 0 to length($selectors) { /* stylelint-disable-line */
+  @for $i from 0 to length($selectors) {
     #{nth($selectors, $i + 1)} {
       animation: shadow-around 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     }

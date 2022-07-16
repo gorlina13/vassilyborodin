@@ -1,9 +1,24 @@
 {
   "extends": "stylelint-config-htmlacademy",
+  "customSyntax": "postcss-scss",
+  "ignoreFiles": ["**/normalize.scss"],
 
   "rules": {
     "declaration-no-important": true,
-    "indentation": [2, {"ignore": ["inside-parens"]}],
+    "indentation": [2, {
+      "ignore": ["inside-parens"]
+    }],
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "use",
+        "mixin",
+        "include",
+        "content",
+        "each",
+        "for"
+      ]
+    }],
+    "number-max-precision": 3,
     "value-no-vendor-prefix": [ true, {
       "ignoreValues": [
         "grid"
