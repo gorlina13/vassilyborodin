@@ -36,7 +36,7 @@
   vertical-align: top;
   color: inherit;
 
-  border: 1px solid transparent;
+  border: 0.056em solid transparent;
 
   &[href] {
     cursor: pointer;
@@ -46,7 +46,7 @@
   &:focus {
     border-color: rgba(255, 255, 255, 0.3);
     background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 6px 0 10px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0.333em 0 0.556em 0 rgba(255, 255, 255, 0.5);
   }
 
   &[href]:hover {
@@ -182,7 +182,7 @@
   }
 
   .edition-list__link {
-    max-width: 170px;
+    max-width: 9.444em;
   }
 }
 
@@ -216,6 +216,6 @@
 
   .edition-list__link {
     display: block;
-    max-width: 230px;
+    max-width: 12.778em;
   }
 }

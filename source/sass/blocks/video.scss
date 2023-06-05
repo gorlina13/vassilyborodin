@@ -19,7 +19,7 @@
   &[href]:hover,
   &:focus {
     outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color; /* stylelint-disable-line */
+    outline: 0.278em auto -webkit-focus-ring-color; /* stylelint-disable-line */
   }
 }
 
@@ -73,8 +73,8 @@
   display: none;
   margin: auto;
   padding: 0;
-  width: 68px;
-  height: 48px;
+  width: 3.778em;
+  height: 2.667em;
 
   border: none;
   background-color: transparent;

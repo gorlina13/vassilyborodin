@@ -40,8 +40,8 @@
   color: #ffffff;
 
   background-color: $menu-bg-color;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+  border-top: 0.056em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.056em solid rgba(1, 1, 1, 0.2);
 
   .site-list__item:first-child & {
     border-top-color: transparent;
@@ -89,7 +89,7 @@
     content: "";
 
     position: absolute;
-    top: -1px;
+    top: -0.056rem;
     left: 0;
     right: 0;
 
@@ -114,7 +114,7 @@
     color: #ffffff;
 
     background-color: $menu-bg-color;
-    border-left: 2px solid $menu-bg-color;
+    border-left: 0.111em solid $menu-bg-color;
 
     &::after {
       position: static;

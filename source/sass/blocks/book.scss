@@ -26,7 +26,7 @@
   &[href]:hover,
   &:focus {
     color: $book-link-hover-color;
-    text-shadow: 0 0 1px $book-link-hover-color;
+    text-shadow: 0 0 0.056em $book-link-hover-color;
   }
 
   &[href]:hover {

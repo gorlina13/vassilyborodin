@@ -31,7 +31,7 @@
 
   &[href]:hover,
   &:focus {
-    text-shadow: 0 0 1px $ordinary-heading-color;
+    text-shadow: 0 0 0.056em $ordinary-heading-color;
   }
 
   &[href]:hover {

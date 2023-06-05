@@ -23,7 +23,7 @@
 
 @mixin underline($color) {
   background: linear-gradient($color, $color) no-repeat;
-  background-size: 100% 2px;
+  background-size: 100% 0.111rem;
   background-position: 0 100%;
 
   &[href]:active {
@@ -78,7 +78,7 @@
     }
 
     100% {
-      box-shadow: inset 6px -6px 6px 0 $color;
+      box-shadow: inset 0.333rem -0.333rem 0.333rem 0 $color;
     }
   }
 
@@ -96,7 +96,7 @@
     }
 
     100% {
-      box-shadow: 0 0 12px 4px $color;
+      box-shadow: 0 0 0.667rem 0.222rem $color;
     }
   }
 

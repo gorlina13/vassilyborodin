@@ -19,7 +19,7 @@
   &[href]:hover,
   &:focus {
     outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color; /* stylelint-disable-line */
+    outline: 0.278em auto -webkit-focus-ring-color; /* stylelint-disable-line */
   }
 }
 
@@ -47,17 +47,17 @@
 
 .audio__button {
   position: absolute;
-  left: 10px;
+  left: 0.556em;
   bottom: 34.211%;
 
   display: none;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  width: 2.778em;
+  height: 2.778em;
+  margin-bottom: 0.556em;
   padding: 0;
 
   border: none;
-  border-radius: 2px;
+  border-radius: 0.111em;
   background-color: rgba(0, 0, 0, 0.75);
   cursor: pointer;
 
@@ -72,7 +72,7 @@
 
     position: absolute;
     top: 0;
-    left: 1px;
+    left: 0.056em;
     bottom: 0;
     right: 0;
 
@@ -82,7 +82,7 @@
 
     border-color: transparent transparent transparent #ffffff;
     border-style: dashed dashed dashed solid;
-    border-width: 10px 0 10px 18px;
+    border-width: 0.556em 0 0.556em 1em;
   }
 }
 
@@ -90,7 +90,7 @@
   left: auto;
   right: 2.86%;
 
-  width: 75px;
+  width: 4.167em;
   background-color: #000000;
 
   .audio__link:hover + &,
@@ -110,8 +110,8 @@
     bottom: 0;
     right: 0;
 
-    width: 24px;
-    height: 24px;
+    width: 1.333em;
+    height: 1.333em;
     margin: auto;
 
     fill: rgba(255, 255, 255, 0.8);
